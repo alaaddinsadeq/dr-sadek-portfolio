@@ -1,3 +1,4 @@
+console.log("Asaasweb JS is running!");
 document.addEventListener('DOMContentLoaded', () => {
     // --- 1. Mobile Menu Toggle ---
     const navLinks = document.querySelector('.nav-links');
