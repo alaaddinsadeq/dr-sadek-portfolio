@@ -1117,3 +1117,67 @@ body {
     font-weight: 600;
     line-height: 1.3;
 }
+
+/* --- Practice Areas Section --- */
+.practice-section {
+    padding: 80px 0 120px;
+    background-color: var(--bg-soft);
+}
+
+.practice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.practice-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-sm);
+    border-top: 4px solid transparent; /* Hidden border for hover effect */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effect: Lifts up and shows gold border */
+.practice-card:hover {
+    transform: translateY(-10px);
+    border-top-color: var(--accent);
+    box-shadow: var(--shadow-lg);
+}
+
+.practice-icon {
+    width: 65px;
+    height: 65px;
+    background: rgba(195, 157, 99, 0.1); /* Soft gold background */
+    color: var(--accent);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    transition: var(--transition);
+}
+
+.practice-card:hover .practice-icon {
+    background: var(--accent);
+    color: white;
+    transform: scale(1.1) rotate(5deg); /* Slight pop effect */
+}
+
+.practice-card h3 {
+    color: var(--primary);
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.practice-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+}
