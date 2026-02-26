@@ -1,70 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Content Manager | Dr. Sadek Almaswari</title>
-    
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-    <style>
-        /* This styles the loading screen before the CMS React App mounts */
-        body {
-            margin: 0;
-            font-family: system-ui, -apple-system, sans-serif;
-            background-color: #f8fafc;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-        .admin-loader {
-            text-align: center;
-            color: #0a2540;
-        }
-        .admin-footer {
-            position: fixed;
-            bottom: 20px;
-            font-size: 0.85rem;
-            color: #64748b;
-        }
-        .admin-footer a {
-            color: #c39d63;
-            text-decoration: none;
-            font-weight: 600;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | Dr. Sadek Almaswari</title>
+  
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
-    <div class="admin-loader">
-        <h2>Loading Secure CMS...</h2>
-        <p>Dr. Sadek Almaswari | Medical Portal</p>
-    </div>
-
-    <div class="admin-footer">
-        <p>&copy; 2026 Dr. Sadek Mohsen Almaswari. Developed by <a href="https://asaasweb.com" target="_blank">asaasweb.com</a></p>
-    </div>
-
-    <script src="https://unpkg.com/decap-cms@^3.1.0/dist/decap-cms.js"></script>
-
-    <script>
-        // 1. Inject the main website's CSS into the CMS preview pane
-        // This makes the text, colors, and fonts in the editor match the live website!
-        CMS.registerPreviewStyle("../assets/css/style.css");
-
-        // 2. Netlify Identity Login Redirect
-        // This ensures that if the doctor logs in from the main page, he is pushed to the admin dashboard
-        if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", user => {
-                if (!user) {
-                    window.netlifyIdentity.on("login", () => {
-                        document.location.href = "/admin/";
-                    });
-                }
-            });
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
         }
-    </script>
+      });
+    }
+  </script>
 </body>
 </html>
