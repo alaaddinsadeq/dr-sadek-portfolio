@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 async function loadNews() {
     const newsFeed = document.getElementById('news-feed');
-    const repoOwner = "YOUR_GITHUB_USERNAME"; // Change this
+    const repoOwner = "alaaddinsadeq"; // Change this
     const repoName = "dr-sadek-portfolio";    // Change this
     const folderPath = "posts";               // Where CMS saves .md files
 
