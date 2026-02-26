@@ -1801,3 +1801,122 @@ body {
 @media (max-width: 992px) {
     .contact-grid { grid-template-columns: 1fr; gap: 40px; }
 }
+
+/* --- Education Section --- */
+.education-section {
+    padding: 80px 0 120px;
+    background-color: var(--bg-soft);
+}
+
+.edu-pathway {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.edu-card {
+    display: flex;
+    background: white;
+    padding: 35px 40px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    border-left: 5px solid var(--primary);
+    align-items: flex-start;
+    gap: 30px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.edu-card.premium-edu {
+    border-left: 5px solid var(--accent);
+    background: linear-gradient(145deg, #ffffff 0%, #fffbf0 100%);
+}
+
+.edu-card:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.edu-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(10, 37, 64, 0.05);
+    color: var(--primary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.edu-card.premium-edu .edu-icon {
+    background: rgba(195, 157, 99, 0.1);
+    color: var(--accent);
+}
+
+.edu-content {
+    flex: 1;
+}
+
+.edu-date {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-light);
+    background: var(--bg-soft);
+    padding: 4px 12px;
+    border-radius: 50px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.edu-card.premium-edu .edu-date {
+    background: rgba(195, 157, 99, 0.15);
+    color: var(--accent);
+}
+
+.edu-content h3 {
+    color: var(--primary);
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.edu-university {
+    display: block;
+    color: var(--accent);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.edu-content p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Animation */
+.fade-up-element {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fade-up-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .edu-card {
+        flex-direction: column;
+        gap: 20px;
+        padding: 25px;
+    }
+}
