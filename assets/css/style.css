@@ -1498,3 +1498,151 @@ body {
     .acc-card { flex-direction: column; align-items: flex-start; }
     .acc-year { padding-right: 0; margin-right: 0; border-right: none; border-bottom: 2px solid var(--bg-soft); padding-bottom: 15px; margin-bottom: 15px; width: 100%; }
 }
+
+/* --- News & Updates Section --- */
+.news-section {
+    padding: 80px 0 120px;
+    background-color: var(--bg-soft);
+    min-height: 60vh;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 40px;
+}
+
+/* --- News Cards --- */
+.news-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e2e8f0;
+}
+
+.news-card:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(195, 157, 99, 0.3);
+}
+
+.news-image {
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+    background: var(--primary);
+}
+
+/* Premium abstract background for posts without images */
+.abstract-bg {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary) 0%, #1e3a5f 100%);
+    position: relative;
+    opacity: 0.9;
+    transition: transform 0.6s ease;
+}
+
+.abstract-bg::after {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(195, 157, 99, 0.15) 0%, transparent 60%);
+}
+
+.news-card:hover .abstract-bg {
+    transform: scale(1.08); /* Zoom effect on hover */
+}
+
+.news-content {
+    padding: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-date {
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.news-title {
+    font-size: 1.4rem;
+    color: var(--primary);
+    line-height: 1.4;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.read-more {
+    margin-top: auto; /* Pushes button to bottom of card */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.read-more svg {
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover .read-more {
+    color: var(--accent);
+}
+
+.news-card:hover .read-more svg {
+    transform: translateX(5px); /* Arrow shoots right on hover */
+}
+
+/* --- Skeleton Loading Animation (High-End UX) --- */
+.skeleton {
+    pointer-events: none;
+}
+
+.skeleton-img {
+    height: 220px;
+    background: #e2e8f0;
+    animation: pulse-bg 1.5s infinite;
+}
+
+.skeleton-text {
+    height: 14px;
+    background: #e2e8f0;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    animation: pulse-bg 1.5s infinite;
+}
+
+.skeleton-text.short { width: 30%; height: 12px; margin-bottom: 20px; }
+.skeleton-text.title { width: 90%; height: 24px; margin-bottom: 30px; }
+
+@keyframes pulse-bg {
+    0% { background-color: #e2e8f0; }
+    50% { background-color: #cbd5e1; }
+    100% { background-color: #e2e8f0; }
+}
+
+/* --- Empty State --- */
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+    border-radius: 20px;
+    border: 1px dashed #cbd5e1;
+}
+
+.empty-state h3 { color: var(--primary); margin-bottom: 10px; }
+.empty-state p { color: var(--text-light); }
