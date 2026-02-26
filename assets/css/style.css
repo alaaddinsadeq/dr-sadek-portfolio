@@ -2206,3 +2206,25 @@ body {
         padding: 120px 0 40px; /* Extra padding top for the mobile header */
     }
 }
+
+/* --- Mobile Footer Responsiveness --- */
+@media (max-width: 768px) {
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr; /* This forces the 3 sections to stack vertically */
+        text-align: center; /* Centers the text for a cleaner mobile look */
+        gap: 30px; /* Adds nice breathing room between the stacked sections */
+    }
+
+    /* Center the quick links on mobile so they don't awkwardly align to the left */
+    .footer-links ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .footer-links li {
+        margin-bottom: 10px;
+    }
+}
