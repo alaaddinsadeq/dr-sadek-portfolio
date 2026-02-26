@@ -2228,3 +2228,24 @@ body {
         margin-bottom: 10px;
     }
 }
+
+/* --- Keep the original placeholder shape but hide overflowing image corners --- */
+.hero-image-placeholder {
+    width: 100%;
+    aspect-ratio: 4/5; /* Keeps the elegant portrait rectangle shape */
+    background-color: #e2e8f0;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+    overflow: hidden; /* CRUCIAL: This cuts off the sharp corners of the image */
+}
+
+/* --- Make the image perfectly fill the frame --- */
+.hero-image-placeholder .profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Forces the image to fill the box without distorting the face */
+    display: block;
+}
