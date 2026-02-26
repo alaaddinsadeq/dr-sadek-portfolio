@@ -1,0 +1,29 @@
+# Global settings for the build
+[build]
+  publish = "/" # Or "public" if you moved your HTML files into a subfolder
+
+# Redirects for Netlify Identity & Decap CMS
+# This ensures that when the Doctor refreshes /admin, it doesn't 404
+[[redirects]]
+  from = "/admin/*"
+  status = 200
+  force = true
+
+# This ensures Netlify handles your contact form correctly
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Optimization: Tells Netlify to compress your CSS and JS for faster loading in KSA
+[build.processing]
+  skip_processing = false
+[build.processing.css]
+  bundle = true
+  minify = true
+[build.processing.js]
+  bundle = true
+  minify = true
+[build.processing.html]
+  pretty_urls = true
+  minify = true

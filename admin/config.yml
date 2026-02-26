@@ -1,0 +1,26 @@
+# Backend configuration
+backend:
+  name: git-gateway
+  branch: main # Ensure this matches your GitHub default branch (main or master)
+
+# Media and Public folders
+# This is where images uploaded by the doctor will be stored
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+# Content Collections
+collections:
+  - name: "news" # Used in routes, e.g., /admin/#/collections/news
+    label: "News & Updates" # Used in the UI
+    folder: "posts" # The folder where .md files will be saved in your repo
+    create: true # Allows the doctor to create new posts
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename format
+    editor:
+      preview: false # Set to true if you build a custom preview template
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "news" }
+      - { label: "Title", name: "title", widget: "string", hint: "The headline of the news post" }
+      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Summary", name: "description", widget: "text", hint: "A short snippet shown on the news listing page" }
+      - { label: "Post Body", name: "body", widget: "markdown", hint: "The full content of the update" }
