@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Sadek Mohsen Almaswari | ENT Consultant</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">Dr. Sadek <span>Almaswari</span></a>
-            <ul class="nav-links">
+            <ul class="nav-links" id="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="education.html">Education</a></li>
                 <li><a href="experience.html">Experience</a></li>
@@ -30,50 +29,41 @@
         </div>
     </nav>
 
-    <header class="hero">
+    <header class="hero-section">
         <div class="container hero-grid">
-            <div class="hero-text">
-                <div class="badge-wrapper">
-                    <span class="badge">ENT Consultant</span>
-                    <span class="badge-outline">20+ Years Experience</span>
-                </div>
-                <h1>Precision in Care, <br><span>Expertise in Surgery.</span></h1>
-                <p>Dr. Sadek Mohsen Almaswari provides world-class Otorhinolaryngology and Head & Neck Surgery, combining academic excellence with compassionate patient care in Riyadh.</p>
-                <div class="hero-cta">
-                    <a href="contact.html" class="btn-primary">Book Consultation</a>
-                    <a href="assets/documents/Dr-Sadek-Almaswari-CV.pdf" class="btn-secondary" target="_blank">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4M7 10l5 5 5-5M12 15V3"/></svg>
-                        Download CV
-                    </a>
+            <div class="hero-content fade-up-element">
+                <span class="hero-subtitle">Welcome to the practice of</span>
+                <h1>Dr. Sadek Mohsen Almaswari</h1>
+                <p class="hero-title">Consultant Otorhinolaryngology, Head & Neck Surgery</p>
+                <p class="hero-desc">Providing world-class, comprehensive ENT care. Elite board certifications from the Saudi Commission, Arab Board, and Jordanian Medical Council.</p>
+                <div class="hero-actions">
+                    <a href="contact.html" class="btn-primary">Book a Consultation</a>
+                    <a href="practice.html" class="btn-secondary">Explore Practice Areas</a>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="image-accent"></div>
-                <img src="assets/images/profile.jpeg" alt="Dr. Sadek Mohsen Almaswari">
-                <div class="experience-tag">
-                    <span class="number">20+</span>
-                    <span class="text">Years of <br>Excellence</span>
+            
+            <div class="hero-image-wrapper fade-up-element" style="transition-delay: 0.2s;">
+                <div class="hero-image-placeholder">
+                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <p>Insert Professional Portrait Here</p>
                 </div>
             </div>
         </div>
     </header>
 
-    <section class="quick-info">
-        <div class="container info-grid">
-            <div class="info-card">
-                <div class="icon-circle">🏥</div>
-                <h3>Current Role</h3>
-                <p>Consultant at Dr. Mohammed Alfagih Hospital, Riyadh</p>
+    <section class="highlights-section">
+        <div class="container highlights-grid">
+            <div class="highlight-card fade-up-element">
+                <h3>Expert Care</h3>
+                <p>Specialized in advanced Head & Neck Surgeries and comprehensive ENT treatments.</p>
             </div>
-            <div class="info-card active">
-                <div class="icon-circle">📜</div>
-                <h3>Accreditation</h3>
-                <p>Saudi Commission & Arab Board Certified Specialist</p>
+            <div class="highlight-card fade-up-element" style="transition-delay: 0.1s;">
+                <h3>Triple Board Certified</h3>
+                <p>Recognized by Saudi, Arab, and Jordanian medical boards for surgical excellence.</p>
             </div>
-            <div class="info-card">
-                <div class="icon-circle">🔬</div>
-                <h3>Specialization</h3>
-                <p>Advanced Head & Neck Surgical Procedures</p>
+            <div class="highlight-card fade-up-element" style="transition-delay: 0.2s;">
+                <h3>Riyadh Based</h3>
+                <p>Currently serving patients at the prestigious Dr. Mohammed Alfagih Hospital.</p>
             </div>
         </div>
     </section>
@@ -89,25 +79,39 @@
                 <ul>
                     <li><a href="practice.html">Practice Areas</a></li>
                     <li><a href="publications.html">Publications</a></li>
-                    <li><a href="news.html">News & Updates</a></li>
+                    <li><a href="contact.html">Appointments</a></li>
                 </ul>
             </div>
             <div class="footer-copy">
-                <p>&copy; 2026 Dr. Sadek Almaswari. <br>Crafted by <a href="https://asaasweb.com">asaasweb.com</a></p>
+                <p>&copy; 2026 Dr. Sadek Mohsen Almaswari. <br>Developed by <a href="https://asaasweb.com" target="_blank">asaasweb.com</a></p>
             </div>
         </div>
     </footer>
 
     <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
+        document.addEventListener("DOMContentLoaded", function() {
+            // Mobile Menu Logic
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.getElementById('nav-links');
+            
+            mobileMenu.addEventListener('click', () => {
+                mobileMenu.classList.toggle('active');
+                navLinks.classList.toggle('active');
             });
-          }
+
+            // Scroll Animation Logic
+            const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-up-element').forEach(el => observer.observe(el));
         });
-      }
     </script>
 </body>
 </html>
