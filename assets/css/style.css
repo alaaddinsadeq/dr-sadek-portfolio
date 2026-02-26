@@ -744,3 +744,83 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+:root {
+    /* Modern Medical Palette */
+    --primary: #0a2540;      /* Deep Navy (Trust) */
+    --accent: #c39d63;       /* Sophisticated Gold (Expertise) */
+    --text-main: #333d47;    /* Soft Black */
+    --bg-light: #f6f9fc;     /* Modern Off-white */
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Inter', -apple-system, sans-serif; /* Cleaner typography */
+    color: var(--text-main);
+    background-color: var(--bg-light);
+    line-height: 1.6;
+}
+
+/* Navbar Modernization */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px); /* Modern frosted glass effect */
+    padding: 1.2rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--primary);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+/* The Primary Button Style */
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white) !important;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px; /* Modern pill shape */
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(10, 37, 64, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(10, 37, 64, 0.3);
+}
