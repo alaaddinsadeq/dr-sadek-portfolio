@@ -113,5 +113,19 @@
             document.querySelectorAll('.fade-up-element').forEach(el => observer.observe(el));
         });
     </script>
+
+    <script>
+        // Mobile Menu Logic
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+        
+        if (mobileMenu && navLinks) {
+            mobileMenu.addEventListener('click', () => {
+                mobileMenu.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+        }
+    </script>
+
 </body>
 </html>
