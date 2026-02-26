@@ -971,3 +971,149 @@ body {
 .footer-brand .logo { color: white; }
 .footer-brand p { color: #94a3b8; margin-top: 15px; }
 
+/* --- Timeline Container --- */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 20px 0;
+}
+
+/* Central Vertical Line */
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--accent) 0%, #e2e8f0 100%);
+    z-index: 0;
+}
+
+/* Individual Item Wrapper */
+.timeline-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 1;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Alternate Layout (Left/Right) */
+.timeline-item:nth-child(even) { flex-direction: row-reverse; }
+
+.timeline-date {
+    width: 40%;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 1.1rem;
+    text-align: right;
+}
+.timeline-item:nth-child(even) .timeline-date { text-align: left; }
+
+.timeline-content {
+    width: 45%;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: var(--transition);
+}
+
+.timeline-content:hover {
+    transform: scale(1.03) translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent);
+}
+
+/* The "Pulse" Graphic Marker */
+.timeline-marker {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 16px;
+    background: var(--primary);
+    border: 3px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(195, 157, 99, 0.2);
+}
+
+.pulse-ring {
+    position: absolute;
+    top: -10px; left: -10px;
+    width: 30px; height: 30px;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.5); opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* Hospital Name Decoration */
+.hospital-name {
+    display: block;
+    color: var(--primary);
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.role-tag {
+    font-size: 0.75rem;
+    background: var(--bg-soft);
+    padding: 4px 12px;
+    border-radius: 50px;
+    color: var(--text-light);
+}
+
+/* --- 1. Fix the Description Text --- */
+.hero-text p {
+    color: #475569; /* A sophisticated Slate Gray */
+    font-size: 1.15rem;
+    margin-bottom: 30px;
+    max-width: 550px;
+    line-height: 1.7;
+}
+
+/* --- 2. Fix the "Download CV" Button --- */
+.hero-cta {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap; /* Keeps it neat on mobile */
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Spaces the SVG icon and text */
+    color: var(--primary); /* Dark Navy text */
+    background: transparent;
+    border: 2px solid var(--primary); /* Navy outline */
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-secondary:hover {
+    background: var(--primary);
+    color: white; /* Inverts to white text on navy background when hovered */
+    transform: translateY(-2px);
+}
+
+/* --- 3. Fix the "Years of Excellence" Text --- */
+.experience-tag .text {
+    color: var(--primary); /* Dark Navy text */
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.3;
+}

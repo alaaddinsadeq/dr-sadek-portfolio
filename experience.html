@@ -35,75 +35,88 @@
         </div>
     </header>
 
-    <section class="experience-section">
-        <div class="container">
-            <div class="timeline">
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">April 2024 - Present</div>
-                    <div class="timeline-content">
-                        <h3>Otorhinolaryngology (ENT) Consultant</h3>
-                        <span class="hospital-name">Dr. Mohammed Alfagih Hospital - Riyadh, KSA</span>
-                    </div>
-                </div>
+<section class="experience-section">
+    <div class="container">
+        <div class="timeline">
+            <div class="timeline-line"></div>
 
-                <div class="timeline-item">
-                    <div class="timeline-date">April 2022 - April 2024</div>
-                    <div class="timeline-content">
-                        <h3>Otorhinolaryngology (ENT) Consultant</h3>
-                        <span class="hospital-name">Saudi German Hospital - Hail, KSA</span>
-                    </div>
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-marker">
+                    <div class="pulse-ring"></div>
                 </div>
+                <div class="timeline-date">Apr 2024 - Present</div>
+                <div class="timeline-content">
+                    <span class="role-tag">Consultant</span>
+                    <h3>Otorhinolaryngology (ENT) Consultant</h3>
+                    <span class="hospital-name">Dr. Mohammed Alfagih Hospital</span>
+                    <span class="location">Riyadh, KSA</span>
+                </div>
+            </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-date">July 2021 - March 2022</div>
-                    <div class="timeline-content">
-                        <h3>Otorhinolaryngology (ENT) Consultant</h3>
-                        <span class="hospital-name">Alzahra'a Hospital - Jeddah, KSA</span>
-                    </div>
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">2022 - 2024</div>
+                <div class="timeline-content">
+                    <span class="role-tag">Consultant</span>
+                    <h3>Otorhinolaryngology (ENT) Consultant</h3>
+                    <span class="hospital-name">Saudi German Hospital</span>
+                    <span class="location">Hail, KSA</span>
                 </div>
+            </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-date">Oct 2016 - July 2021</div>
-                    <div class="timeline-content">
-                        <h3>Associate Consultant (ENT)</h3>
-                        <span class="hospital-name">King Abdullah Medical Complex - Jeddah, MOH - KSA</span>
-                    </div>
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">2021 - 2022</div>
+                <div class="timeline-content">
+                    <span class="role-tag">Consultant</span>
+                    <h3>Otorhinolaryngology (ENT) Consultant</h3>
+                    <span class="hospital-name">Alzahra'a Hospital</span>
+                    <span class="location">Jeddah, KSA</span>
                 </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">Aug 2015 - Aug 2016</div>
-                    <div class="timeline-content">
-                        <h3>Otorhinolaryngology (ENT) Specialist</h3>
-                        <span class="hospital-name">Aldahyah Medical Center - Amman, Jordan</span>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">2010 - 2015</div>
-                    <div class="timeline-content">
-                        <h3>Otorhinolaryngology Resident</h3>
-                        <span class="hospital-name">Jordanian M.O.H Hospitals (5-year training program)</span>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">2004 - 2010</div>
-                    <div class="timeline-content">
-                        <h3>General Practitioner</h3>
-                        <span class="hospital-name">Yemeni M.O.H. Hospitals - Amran, Yemen</span>
-                    </div>
-                </div>
+            </div>
 
             </div>
-        </div>
-    </section>
+    </div>
+</section>
 
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Dr. Sadek Mohsen Almaswari. Developed by <a href="https://asassweb.com">asassweb.com</a></p>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo">Dr. Sadek <span>Almaswari</span></a>
+                <p>Excellence in Otorhinolaryngology based in Saudi Arabia.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="practice.html">Practice Areas</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="news.html">News & Updates</a></li>
+                </ul>
+            </div>
+            <div class="footer-copy">
+                <p>&copy; 2026 Dr. Sadek Almaswari. <br>Crafted by <a href="https://asaasweb.com">asaasweb.com</a></p>
+            </div>
         </div>
     </footer>
+
+<script>
+    const observerOptions = { threshold: 0.2 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.timeline-item').forEach(item => {
+        item.style.opacity = "0";
+        item.style.transform = "translateY(30px)";
+        item.style.transition = "all 0.6s ease-out";
+        observer.observe(item);
+    });
+</script>
 
 </body>
 </html>
