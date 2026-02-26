@@ -1920,3 +1920,43 @@ body {
         padding: 25px;
     }
 }
+
+/* --- Enhanced Navigation Links & Active State --- */
+.nav-links li a {
+    position: relative;
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+/* Hover and Active Text Color */
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: var(--accent); /* This should be your gold/brand color */
+}
+
+/* The Active Page Underline Indicator */
+.nav-links li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent);
+    border-radius: 2px;
+}
+
+/* Make sure the Contact button doesn't get the underline if it's active */
+.nav-links li a.btn-primary.active {
+    color: white;
+    background-color: var(--accent);
+    box-shadow: 0 4px 12px rgba(195, 157, 99, 0.3);
+}
+
+.nav-links li a.btn-primary.active::after {
+    display: none;
+}
