@@ -1960,3 +1960,30 @@ body {
 .nav-links li a.btn-primary.active::after {
     display: none;
 }
+
+/* --- Fix for the Contact Button in the Navbar --- */
+.nav-links li a.btn-primary {
+    display: inline-block;
+    padding: 10px 28px !important; /* Forces enough breathing room on the left and right */
+    border-radius: 50px;
+    background-color: var(--primary);
+    color: white;
+    font-weight: 600;
+    white-space: nowrap; /* Prevents the text from squishing or breaking outside the box */
+    line-height: 1.2;
+    transition: all 0.3s ease;
+}
+
+/* Ensure the active state keeps the correct padding and shape */
+.nav-links li a.btn-primary.active,
+.nav-links li a.btn-primary:hover {
+    background-color: var(--accent);
+    color: white;
+    box-shadow: 0 4px 12px rgba(195, 157, 99, 0.3);
+}
+
+/* Remove the gold underline specifically for the button */
+.nav-links li a.btn-primary::after,
+.nav-links li a.btn-primary.active::after {
+    display: none !important;
+}
