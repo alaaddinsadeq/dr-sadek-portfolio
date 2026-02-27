@@ -2425,3 +2425,151 @@ body {
 .skeleton .news-content {
     padding: 25px;
 }
+
+/* --- Homepage Summary Sections --- */
+.home-summaries {
+    padding: 60px 0;
+}
+
+.summary-block {
+    margin-bottom: 80px;
+}
+
+.summary-header {
+    margin-bottom: 30px;
+}
+
+/* Make the heading a beautiful, interactive link */
+.summary-header .hover-link {
+    color: var(--primary);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.3s ease;
+}
+
+.summary-header .hover-link svg {
+    transition: transform 0.3s ease;
+}
+
+.summary-header .hover-link:hover {
+    color: var(--accent); /* Changes to your accent color on hover */
+}
+
+.summary-header .hover-link:hover svg {
+    transform: translateX(5px); /* Arrow slides right gracefully */
+}
+
+.summary-header p {
+    color: #666;
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+/* Grid Layouts */
+.summary-grid {
+    display: grid;
+    gap: 30px;
+}
+
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+
+/* Preview Cards */
+.preview-card {
+    background: #fdfdfd;
+    border-left: 4px solid var(--accent);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.preview-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.preview-card h3 {
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.preview-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Tinted Background Box for Variety */
+.tint-box {
+    background-color: #f8fafc;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.white-card {
+    background: #ffffff;
+    border-left: none;
+    border-top: 4px solid var(--accent);
+}
+
+/* Badges & Links */
+.badge {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--primary);
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.text-link:hover {
+    color: var(--accent);
+}
+
+/* List Preview for Awards & Publications */
+.list-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+}
+
+.list-icon {
+    font-size: 1.5rem;
+}
+
+.text-muted {
+    color: #777;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .tint-box {
+        padding: 30px 20px;
+    }
+}
