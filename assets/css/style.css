@@ -2252,24 +2252,27 @@ body {
 
 /* --- Post Modal (Popup) Styles --- */
 .post-modal {
-    display: none; /* Hidden by default */
+    display: flex; /* Keeps it in the DOM so it can actually animate */
+    visibility: hidden; /* Hides it visually */
+    pointer-events: none; /* Stops you from accidentally clicking it while hidden */
     position: fixed;
     z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Fallback dark tint */
-    backdrop-filter: blur(8px); /* The frosted glass blur effect */
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, visibility 0.3s;
 }
 
-/* When active, make it visible */
+/* When active, fade the background in */
 .post-modal.show {
-    display: flex;
+    visibility: visible;
+    pointer-events: auto;
     opacity: 1;
 }
 
@@ -2280,19 +2283,22 @@ body {
     width: 90%;
     height: 90%;
     max-width: 1000px;
-    overflow-y: auto; /* Allow scrolling inside the popup if the post is long */
+    overflow-y: auto;
     position: relative;
-    
-    /* Animation: Starts smaller and lower, then springs up */
-    transform: scale(0.8) translateY(30px);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
+    
+    /* Animation: Starts invisible, smaller, and slightly lower */
+    opacity: 0;
+    transform: scale(0.8) translateY(30px);
+    /* The cubic-bezier gives it that premium "spring" effect */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
 }
 
-/* Trigger the spring animation */
+/* Trigger the spring animation for the white box */
 .post-modal.show .post-modal-content {
+    opacity: 1;
     transform: scale(1) translateY(0);
 }
 
