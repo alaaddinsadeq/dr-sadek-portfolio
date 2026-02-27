@@ -2354,3 +2354,68 @@ body {
     .modal-body-content { padding: 30px 20px; }
     .modal-header img { height: 250px; }
 }
+
+/* --- Skeleton Loading Animation --- */
+@keyframes shimmer {
+    0% {
+        background-position: -468px 0;
+    }
+    100% {
+        background-position: 468px 0;
+    }
+}
+
+.skeleton {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* The shimmer effect applied to the grey boxes */
+.skeleton-img, .skeleton-text {
+    background: #f6f7f8;
+    background-image: linear-gradient(
+        to right,
+        #f6f7f8 0%,
+        #edeef1 20%,
+        #f6f7f8 40%,
+        #f6f7f8 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 800px 104px;
+    animation: shimmer 1.5s infinite linear forwards;
+}
+
+/* Image Placeholder Shape */
+.skeleton-img {
+    height: 200px;
+    width: 100%;
+}
+
+/* Text Placeholder Shapes */
+.skeleton-text {
+    height: 14px;
+    margin-bottom: 12px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.skeleton-text.short {
+    width: 30%; /* For the date */
+    height: 12px;
+    margin-bottom: 20px;
+}
+
+.skeleton-text.title {
+    width: 80%; /* For the headline */
+    height: 24px;
+    margin-bottom: 20px;
+}
+
+/* Give the skeleton content area some padding to match the real cards */
+.skeleton .news-content {
+    padding: 25px;
+}
