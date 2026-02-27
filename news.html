@@ -40,35 +40,14 @@
         <div class="container">
             
             <div id="news-container" class="news-grid">
-                
                 <div class="news-card skeleton">
                     <div class="skeleton-img"></div>
                     <div class="news-content">
                         <div class="skeleton-text short"></div>
                         <div class="skeleton-text title"></div>
                         <div class="skeleton-text"></div>
-                        <div class="skeleton-text"></div>
                     </div>
                 </div>
-                <div class="news-card skeleton">
-                    <div class="skeleton-img"></div>
-                    <div class="news-content">
-                        <div class="skeleton-text short"></div>
-                        <div class="skeleton-text title"></div>
-                        <div class="skeleton-text"></div>
-                        <div class="skeleton-text"></div>
-                    </div>
-                </div>
-                <div class="news-card skeleton">
-                    <div class="skeleton-img"></div>
-                    <div class="news-content">
-                        <div class="skeleton-text short"></div>
-                        <div class="skeleton-text title"></div>
-                        <div class="skeleton-text"></div>
-                        <div class="skeleton-text"></div>
-                    </div>
-                </div>
-
             </div>
 
         </div>
@@ -102,15 +81,11 @@
             const url = `https://api.github.com/repos/${username}/${repo}/contents/posts`;
 
             try {
-                // 1. Fetch the list of files
                 const response = await fetch(url);
                 if (!response.ok) throw new Error("No posts found or repository is private.");
                 const files = await response.json();
 
-                // Clear skeletons
                 container.innerHTML = "";
-
-                // Filter for markdown files and reverse to show newest first
                 const mdFiles = files.filter(file => file.name.endsWith('.md')).reverse();
 
                 if (mdFiles.length === 0) {
@@ -118,35 +93,42 @@
                     return;
                 }
 
-                // 2. Fetch and parse each file's content
                 for (let i = 0; i < mdFiles.length; i++) {
                     const file = mdFiles[i];
                     const fileRes = await fetch(file.download_url);
                     const fileText = await fileRes.text();
 
-                    // Basic Frontmatter extraction (Decap CMS format)
+                    // Extract Title, Date, AND Image from the markdown frontmatter
                     const titleMatch = fileText.match(/title:\s*["']?(.*?)["']?\n/);
                     const dateMatch = fileText.match(/date:\s*["']?(.*?)["']?\n/);
+                    const imageMatch = fileText.match(/image:\s*["']?(.*?)["']?\n/); 
                     
                     const title = titleMatch ? titleMatch[1] : file.name.replace('.md', '');
                     const rawDate = dateMatch ? dateMatch[1] : "";
+                    const imagePath = imageMatch ? imageMatch[1].replace(/['"]/g, '') : ""; 
                     
-                    // Format Date nicely
                     const dateObj = new Date(rawDate);
                     const formattedDate = isNaN(dateObj) ? "Recent Update" : dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
-                    // Create Card HTML
+                    // Dynamically set image or fallback to a solid color if no image exists
+                    const imageHTML = imagePath 
+                        ? `<img src="${imagePath}" alt="${title}" style="width: 100%; height: 100%; object-fit: cover; border-top-left-radius: 16px; border-top-right-radius: 16px;">` 
+                        : `<div class="abstract-bg" style="width: 100%; height: 100%; background-color: var(--bg-soft);"></div>`;
+
+                    // Generate dynamic link pointing to the specific file
+                    const postUrl = `post.html?file=${file.name}`;
+
                     const card = document.createElement("div");
                     card.className = "news-card fade-up-element";
                     
                     card.innerHTML = `
-                        <div class="news-image">
-                            <div class="abstract-bg"></div>
+                        <div class="news-image" style="height: 200px; width: 100%;">
+                            ${imageHTML}
                         </div>
                         <div class="news-content">
                             <span class="news-date">${formattedDate}</span>
                             <h3 class="news-title">${title}</h3>
-                            <a href="#" class="read-more">Read Full Post 
+                            <a href="${postUrl}" class="read-more">Read Full Post 
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                             </a>
                         </div>
@@ -154,7 +136,6 @@
 
                     container.appendChild(card);
 
-                    // Trigger staggered animation
                     setTimeout(() => {
                         card.classList.add('visible');
                     }, i * 150);
@@ -169,7 +150,6 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // 1. Mobile Menu Logic
             const mobileMenu = document.getElementById('mobile-menu');
             const navLinks = document.getElementById('nav-links');
             
@@ -180,7 +160,6 @@
                 });
             }
 
-            // 2. Scroll Animation Logic
             const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
