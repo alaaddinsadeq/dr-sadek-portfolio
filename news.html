@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News & Updates | Dr. Sadek Mohsen Almaswari</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
 
@@ -53,6 +54,20 @@
         </div>
     </section>
 
+    <div id="post-modal" class="post-modal">
+        <div class="post-modal-content">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <div class="modal-header">
+                <img id="modal-image" src="" alt="Post Cover" style="display:none;">
+            </div>
+            <div class="modal-body-content">
+                <span id="modal-date" class="news-date"></span>
+                <h2 id="modal-title"></h2>
+                <div id="modal-text" class="modal-text"></div>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-brand">
@@ -76,20 +91,26 @@
     <script>
         document.addEventListener("DOMContentLoaded", async () => {
             const container = document.getElementById("news-container");
+            const modal = document.getElementById("post-modal");
+            const closeModalBtn = document.getElementById("close-modal");
+            
+            // We will store the loaded posts here so the popup can access them instantly
+            let loadedPosts = [];
+
             const username = "alaaddinsadeq";
             const repo = "dr-sadek-portfolio";
             const url = `https://api.github.com/repos/${username}/${repo}/contents/posts`;
 
             try {
                 const response = await fetch(url);
-                if (!response.ok) throw new Error("No posts found or repository is private.");
+                if (!response.ok) throw new Error("No posts found.");
                 const files = await response.json();
 
                 container.innerHTML = "";
                 const mdFiles = files.filter(file => file.name.endsWith('.md')).reverse();
 
                 if (mdFiles.length === 0) {
-                    container.innerHTML = `<div class="empty-state"><h3>No news published yet.</h3><p>Check back later for updates from Dr. Sadek.</p></div>`;
+                    container.innerHTML = `<div class="empty-state"><h3>No news published yet.</h3></div>`;
                     return;
                 }
 
@@ -98,39 +119,50 @@
                     const fileRes = await fetch(file.download_url);
                     const fileText = await fileRes.text();
 
-                    // Extract Title, Date, AND Image from the markdown frontmatter
+                    // 1. Extract Frontmatter (Title, Date, Image)
                     const titleMatch = fileText.match(/title:\s*["']?(.*?)["']?\n/);
                     const dateMatch = fileText.match(/date:\s*["']?(.*?)["']?\n/);
                     const imageMatch = fileText.match(/image:\s*["']?(.*?)["']?\n/); 
                     
-                    const title = titleMatch ? titleMatch[1] : file.name.replace('.md', '');
+                    const title = titleMatch ? titleMatch[1] : "News Update";
                     const rawDate = dateMatch ? dateMatch[1] : "";
                     const imagePath = imageMatch ? imageMatch[1].replace(/['"]/g, '') : ""; 
                     
                     const dateObj = new Date(rawDate);
-                    const formattedDate = isNaN(dateObj) ? "Recent Update" : dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+                    const formattedDate = isNaN(dateObj) ? "Recent" : dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
-                    // Dynamically set image or fallback to a solid color if no image exists
+                    // 2. Extract the actual article body text
+                    // We split by "---" to ignore the settings block at the top of the file
+                    const parts = fileText.split(/^---\s*$/m);
+                    const articleBody = parts.length > 2 ? parts.slice(2).join('---') : fileText;
+
+                    // 3. Store the data so the popup can use it
+                    loadedPosts.push({
+                        title: title,
+                        date: formattedDate,
+                        image: imagePath,
+                        content: articleBody
+                    });
+
+                    // 4. Create the preview card
                     const imageHTML = imagePath 
                         ? `<img src="${imagePath}" alt="${title}" style="width: 100%; height: 100%; object-fit: cover; border-top-left-radius: 16px; border-top-right-radius: 16px;">` 
                         : `<div class="abstract-bg" style="width: 100%; height: 100%; background-color: var(--bg-soft);"></div>`;
 
-                    // Generate dynamic link pointing to the specific file
-                    const postUrl = `post.html?file=${file.name}`;
-
                     const card = document.createElement("div");
                     card.className = "news-card fade-up-element";
                     
+                    // Notice: The button now calls openPost(index) instead of an href link
                     card.innerHTML = `
-                        <div class="news-image" style="height: 200px; width: 100%;">
+                        <div class="news-image" style="height: 200px; width: 100%; cursor: pointer;" onclick="openPost(${i})">
                             ${imageHTML}
                         </div>
                         <div class="news-content">
                             <span class="news-date">${formattedDate}</span>
-                            <h3 class="news-title">${title}</h3>
-                            <a href="${postUrl}" class="read-more">Read Full Post 
+                            <h3 class="news-title" style="cursor: pointer;" onclick="openPost(${i})">${title}</h3>
+                            <button onclick="openPost(${i})" class="read-more" style="background:none; border:none; padding:0; font:inherit; cursor:pointer; margin-top:15px;">Read Full Post 
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </a>
+                            </button>
                         </div>
                     `;
 
@@ -141,9 +173,45 @@
                     }, i * 150);
                 }
 
+                // Function to inject data into the popup and open it
+                window.openPost = function(index) {
+                    const post = loadedPosts[index];
+                    
+                    document.getElementById("modal-title").innerText = post.title;
+                    document.getElementById("modal-date").innerText = post.date;
+                    
+                    // Use marked.js to convert the markdown body into beautiful HTML
+                    document.getElementById("modal-text").innerHTML = marked.parse(post.content);
+
+                    const imgEl = document.getElementById("modal-image");
+                    if (post.image) {
+                        imgEl.src = post.image;
+                        imgEl.style.display = "block";
+                    } else {
+                        imgEl.style.display = "none";
+                    }
+
+                    // Show the modal and stop background scrolling
+                    modal.classList.add("show");
+                    document.body.style.overflow = "hidden";
+                };
+
+                // Close modal functions
+                const closeTheModal = () => {
+                    modal.classList.remove("show");
+                    document.body.style.overflow = "auto"; // Restore background scrolling
+                };
+
+                closeModalBtn.addEventListener("click", closeTheModal);
+
+                // Close if user clicks the blurred background outside the white box
+                modal.addEventListener("click", (e) => {
+                    if (e.target === modal) closeTheModal();
+                });
+
             } catch (error) {
                 console.error("Error loading news:", error);
-                container.innerHTML = `<div class="empty-state"><h3>Unable to load news.</h3><p>Please try refreshing the page.</p></div>`;
+                container.innerHTML = `<div class="empty-state"><h3>Unable to load news.</h3></div>`;
             }
         });
     </script>
