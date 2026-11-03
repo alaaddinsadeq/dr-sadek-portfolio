@@ -1,38 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Experience | Dr. Sadek Mohsen Almaswari</title>
+    <title>الخبرات العملية والأكاديمية | د. صادق محسن المسوري</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="container">
-            <a href="index.html" class="logo">Dr. Sadek <span>Almaswari</span></a>
+            <a href="index.html" class="brand-logo">
+                <div class="brand-icon" aria-hidden="true">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2a7 7 0 0 0-7 7c0 2.5 1.2 4.6 3 6v3a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2v-3l1.5-1.5L19 8a7 7 0 0 0-7-6z"/>
+                        <path d="M9 10a2 2 0 1 0 0 4"/>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name" data-ar="د. صادق المسوري" data-en="Dr. Sadek Almaswari">د. صادق المسوري</span>
+                    <span class="brand-subtitle-ar" data-ar="استشاري جراحة الأنف والأذن والحنجرة" data-en="Consultant ORL, Head & Neck Surgery">استشاري جراحة الأنف والأذن والحنجرة</span>
+                    <span class="brand-subtitle-en">ENT Consultant</span>
+                </div>
+            </a>
+
             <ul class="nav-links" id="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="experience.html" class="active">Experience</a></li>
-                <li><a href="practice.html">Practice</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="awards.html">Awards</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="contact.html" class="btn-primary">Contact</a></li>
+                <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+                <li><a href="education.html" data-ar="نبذة والمؤهلات" data-en="About & Education">نبذة والمؤهلات</a></li>
+                <li><a href="practice.html" data-ar="الخدمات" data-en="Services">الخدمات</a></li>
+                <li><a href="experience.html" class="active" data-ar="الخبرات العملية" data-en="Experience">الخبرات العملية</a></li>
+                <li><a href="publications.html" data-ar="الأبحاث والمؤتمرات" data-en="Conferences">الأبحاث والمؤتمرات</a></li>
+                <li><a href="awards.html" data-ar="الشهادات والدورات" data-en="Certifications">الشهادات والدورات</a></li>
+                <li><a href="news.html" data-ar="المقالات" data-en="Articles">المقالات</a></li>
+                <li><a href="contact.html" data-ar="اتصل بنا" data-en="Contact Us">اتصل بنا</a></li>
             </ul>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+
+            <div class="nav-actions">
+                <button type="button" class="lang-switch-btn" onclick="toggleSiteLanguage()" aria-label="Switch Language">
+                    <span>English</span>
+                </button>
+                <a href="contact.html" class="btn-nav-book">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    <span data-ar="احجز موعدك الآن" data-en="Book Appointment">احجز موعدك الآن</span>
+                </a>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
         </div>
     </nav>
 
     <header class="page-banner">
         <div class="container">
-            <h1>Professional Experience</h1>
-            <p>Over two decades of progressive medical expertise, academic leadership, and clinical excellence in Otorhinolaryngology and Head & Neck Surgery.</p>
+            <h1 data-ar="الخبرات المهنية والمسيرة السريرية" data-en="Professional & Clinical Experience">الخبرات المهنية والمسيرة السريرية</h1>
+            <p data-ar="أكثر من عشرين عاماً من الخبرة الطبية والجراحية والأكاديمية في كبرى المستشفيات والمراكز الطبية في المملكة العربية السعودية والأردن واليمن." data-en="Over two decades of progressive medical expertise, academic leadership, and surgical excellence in Otorhinolaryngology and Head & Neck Surgery.">
+                أكثر من عشرين عاماً من الخبرة الطبية والجراحية والأكاديمية في كبرى المستشفيات والمراكز الطبية في المملكة العربية السعودية والأردن واليمن.
+            </p>
         </div>
     </header>
 
@@ -41,116 +66,123 @@
             <div class="timeline">
                 <div class="timeline-line"></div>
 
+                <!-- 1. Dr. Mohammed Alfagih Hospital -->
                 <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <div class="pulse-ring"></div>
-                    </div>
-                    <div class="timeline-date">April 2024 - Present</div>
+                    <div class="timeline-marker"></div>
                     <div class="timeline-content">
-                        <span class="role-tag">Consultant</span>
-                        <h3>Otorhinolaryngology (ENT) Consultant</h3>
-                        <span class="hospital-name">Dr. Mohammed Alfagih Hospital</span>
-                        <span class="location">Riyadh, KSA</span>
+                        <span class="timeline-date" data-ar="أبريل 2024 - حتى الآن" data-en="April 2024 - Present">أبريل 2024 - حتى الآن</span>
+                        <span class="role-tag" data-ar="استشاري" data-en="Consultant">استشاري</span>
+                        <h3 data-ar="استشاري جراحة الأنف والأذن والحنجرة وجراحات الرأس والعنق" data-en="Otorhinolaryngology (ENT) Consultant">استشاري جراحة الأنف والأذن والحنجرة وجراحات الرأس والعنق</h3>
+                        <span class="hospital-name" data-ar="مستشفى الدكتور محمد الفقيه" data-en="Dr. Mohammed Alfagih Hospital">مستشفى الدكتور محمد الفقيه</span>
+                        <span class="location" data-ar="الرياض - المملكة العربية السعودية" data-en="Riyadh, Kingdom of Saudi Arabia">الرياض - المملكة العربية السعودية</span>
                     </div>
                 </div>
 
+                <!-- 2. Saudi German Hospital -->
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
-                    <div class="timeline-date">April 2022 - April 2024</div>
                     <div class="timeline-content">
-                        <span class="role-tag">Consultant</span>
-                        <h3>Otorhinolaryngology (ENT) Consultant</h3>
-                        <span class="hospital-name">Saudi German Hospital</span>
-                        <span class="location">Hail, KSA</span>
+                        <span class="timeline-date" data-ar="3 أبريل 2022 - أبريل 2024" data-en="3 April 2022 - April 2024">3 أبريل 2022 - أبريل 2024</span>
+                        <span class="role-tag" data-ar="استشاري" data-en="Consultant">استشاري</span>
+                        <h3 data-ar="استشاري جراحة الأنف والأذن والحنجرة" data-en="Otorhinolaryngology (ENT) Consultant">استشاري جراحة الأنف والأذن والحنجرة</h3>
+                        <span class="hospital-name" data-ar="المستشفى السعودي الألماني" data-en="Saudi German Hospital">المستشفى السعودي الألماني</span>
+                        <span class="location" data-ar="حائل - المملكة العربية السعودية" data-en="Hail, Kingdom of Saudi Arabia">حائل - المملكة العربية السعودية</span>
                     </div>
                 </div>
 
+                <!-- 3. Alzahra'a Hospital -->
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
-                    <div class="timeline-date">July 2021 - March 2022</div>
                     <div class="timeline-content">
-                        <span class="role-tag">Consultant</span>
-                        <h3>Otorhinolaryngology (ENT) Consultant</h3>
-                        <span class="hospital-name">Alzahra'a Hospital</span>
-                        <span class="location">Jeddah, KSA</span>
+                        <span class="timeline-date" data-ar="يوليو 2021 - 31 مارس 2022" data-en="July 2021 - 31 March 2022">يوليو 2021 - 31 مارس 2022</span>
+                        <span class="role-tag" data-ar="استشاري" data-en="Consultant">استشاري</span>
+                        <h3 data-ar="استشاري جراحة الأنف والأذن والحنجرة" data-en="Otorhinolaryngology (ENT) Consultant">استشاري جراحة الأنف والأذن والحنجرة</h3>
+                        <span class="hospital-name" data-ar="مستشفى الزهراء" data-en="Alzahra'a Hospital">مستشفى الزهراء</span>
+                        <span class="location" data-ar="جدة - المملكة العربية السعودية" data-en="Jeddah, Kingdom of Saudi Arabia">جدة - المملكة العربية السعودية</span>
                     </div>
                 </div>
 
+                <!-- 4. King Abdullah Medical Complex -->
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
-                    <div class="timeline-date">Oct 2016 - July 2021</div>
                     <div class="timeline-content">
-                        <span class="role-tag">Associate Consultant</span>
-                        <h3>Otorhinolaryngology (ENT) Associate Consultant</h3>
-                        <span class="hospital-name">King Abdullah Medical Complex (MOH)</span>
-                        <span class="location">Jeddah, KSA</span>
+                        <span class="timeline-date" data-ar="أكتوبر 2016 - يوليو 2021" data-en="October 2016 - July 2021">أكتوبر 2016 - يوليو 2021</span>
+                        <span class="role-tag" data-ar="استشاري مشارك" data-en="Associate Consultant">استشاري مشارك</span>
+                        <h3 data-ar="استشاري مشارك جراحة الأنف والأذن والحنجرة" data-en="Otorhinolaryngology (ENT) Associate Consultant">استشاري مشارك جراحة الأنف والأذن والحنجرة</h3>
+                        <span class="hospital-name" data-ar="مجمع الملك عبدالله الطبي بجدة - وزارة الصحة السعودية" data-en="King Abdullah Medical Complex - Jeddah (MOH)">مجمع الملك عبدالله الطبي بجدة - وزارة الصحة السعودية</span>
+                        <span class="location" data-ar="جدة - المملكة العربية السعودية" data-en="Jeddah, Kingdom of Saudi Arabia">جدة - المملكة العربية السعودية</span>
                     </div>
                 </div>
 
+                <!-- 5. Aldahyah Medical Center -->
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
-                    <div class="timeline-date">Aug 2015 - Aug 2016</div>
                     <div class="timeline-content">
-                        <span class="role-tag">Specialist</span>
-                        <h3>Otorhinolaryngology (ENT) Specialist</h3>
-                        <span class="hospital-name">Aldahyah Medical Center</span>
-                        <span class="location">Amman, Jordan</span>
+                        <span class="timeline-date" data-ar="أغسطس 2015 - أغسطس 2016" data-en="August 2015 - August 2016">أغسطس 2015 - أغسطس 2016</span>
+                        <span class="role-tag" data-ar="أخصائي" data-en="Specialist">أخصائي</span>
+                        <h3 data-ar="أخصائي جراحة الأنف والأذن والحنجرة" data-en="Otorhinolaryngology (ENT) Specialist">أخصائي جراحة الأنف والأذن والحنجرة</h3>
+                        <span class="hospital-name" data-ar="مركز الضاحية الطبي" data-en="Aldahyah Medical Center">مركز الضاحية الطبي</span>
+                        <span class="location" data-ar="عمّان - المملكة الأردنية الهاشمية" data-en="Amman, Jordan">عمّان - المملكة الأردنية الهاشمية</span>
                     </div>
                 </div>
 
+                <!-- 6. Sciences and Technology University -->
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
-                    <div class="timeline-date">2015 - 2016</div>
                     <div class="timeline-content">
-                        <span class="role-tag">Academic</span>
-                        <h3>Assistant Professor of Medicine</h3>
-                        <span class="hospital-name">Sciences and Technology University</span>
-                        <span class="location">Yemen (Jordan Branch)</span>
+                        <span class="timeline-date" data-ar="2015 - 2016" data-en="2015 - 2016">2015 - 2016</span>
+                        <span class="role-tag" data-ar="أكاديمي" data-en="Academic">أكاديمي</span>
+                        <h3 data-ar="أستاذ مساعد بكلية الطب" data-en="Assistant Professor of Medicine">أستاذ مساعد بكلية الطب</h3>
+                        <span class="hospital-name" data-ar="جامعة العلوم والتكنولوجيا" data-en="Sciences and Technology University">جامعة العلوم والتكنولوجيا</span>
+                        <span class="location" data-ar="فرع الأردن" data-en="Yemen - Jordan Branch">فرع الأردن</span>
                     </div>
                 </div>
 
+                <!-- 7. Jordanian MOH Residency -->
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
-                    <div class="timeline-date">Jan 2010 - Jan 2015</div>
                     <div class="timeline-content">
-                        <span class="role-tag">Residency</span>
-                        <h3>Otorhinolaryngology Resident</h3>
-                        <span class="hospital-name">Jordanian M.O.H Hospitals</span>
-                        <span class="location">5-Year Training Program</span>
+                        <span class="timeline-date" data-ar="يناير 2010 - يناير 2015" data-en="January 2010 - January 2015">يناير 2010 - يناير 2015</span>
+                        <span class="role-tag" data-ar="برنامج الإقامة" data-en="Residency">برنامج الإقامة</span>
+                        <h3 data-ar="طبيب مقيم جراحة الأنف والأذن والحنجرة (برنامج تدريبي لمدة 5 سنوات)" data-en="Otorhinolaryngology Resident (5-Year Training Residency Program)">طبيب مقيم جراحة الأنف والأذن والحنجرة (برنامج تدريبي لمدة 5 سنوات)</h3>
+                        <span class="hospital-name" data-ar="مستشفيات وزارة الصحة الأردنية" data-en="Jordanian M.O.H Hospitals">مستشفيات وزارة الصحة الأردنية</span>
+                        <span class="location" data-ar="المملكة الأردنية الهاشمية" data-en="Amman, Jordan">المملكة الأردنية الهاشمية</span>
                     </div>
                 </div>
 
+                <!-- 8. Al-jazeera Institute -->
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
-                    <div class="timeline-date">2005 - 2006</div>
                     <div class="timeline-content">
-                        <span class="role-tag">Academic & Administrative</span>
-                        <h3>Head of Physician-Assistance Dept. & Teacher</h3>
-                        <span class="hospital-name">Al-jazeera Institute for Medical & Technique Sciences</span>
-                        <span class="location">Sana'a, Yemen</span>
-                        <p style="font-size: 0.85rem; color: #64748b; margin-top: 5px;">Taught public health, community medicine, forensic medicine, and primary health care.</p>
+                        <span class="timeline-date" data-ar="2005 - 2006" data-en="2005 - 2006">2005 - 2006</span>
+                        <span class="role-tag" data-ar="إداري وأكاديمي" data-en="Academic & Head of Dept">إداري وأكاديمي</span>
+                        <h3 data-ar="رئيس قسم مساعدي الأطباء ومحاضر في العلوم الطبية" data-en="Head of Physician-Assistance Department & Medical Lecturer">رئيس قسم مساعدي الأطباء ومحاضر في العلوم الطبية</h3>
+                        <span class="hospital-name" data-ar="معهد الجزيرة للعلوم الطبية والتقنية" data-en="Al-Jazeera Institute for Medical & Technique Sciences">معهد الجزيرة للعلوم الطبية والتقنية</span>
+                        <span class="location" data-ar="صنعاء - اليمن (تدريس الصحة العامة، طب المجتمع، الطب الشرعي، والرعاية الصحية الأولية)" data-en="Sana'a, Yemen (Taught Public Health, Community Medicine, Forensic Medicine & Primary Health Care)">صنعاء - اليمن (تدريس الصحة العامة، طب المجتمع، الطب الشرعي، والرعاية الصحية الأولية)</span>
                     </div>
                 </div>
 
+                <!-- 9. Yemeni MOH GP -->
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
-                    <div class="timeline-date">2004 - Dec 2010</div>
                     <div class="timeline-content">
-                        <span class="role-tag">General Practice</span>
-                        <h3>General Practitioner</h3>
-                        <span class="hospital-name">Yemeni M.O.H. Hospitals</span>
-                        <span class="location">Amran, Yemen</span>
+                        <span class="timeline-date" data-ar="2004 - ديسمبر 2010" data-en="2004 - December 2010">2004 - ديسمبر 2010</span>
+                        <span class="role-tag" data-ar="ممارس عام" data-en="General Practice">ممارس عام</span>
+                        <h3 data-ar="طبيب عام" data-en="General Practitioner">طبيب عام</h3>
+                        <span class="hospital-name" data-ar="مستشفيات وزارة الصحة" data-en="Yemeni M.O.H. Hospitals">مستشفيات وزارة الصحة</span>
+                        <span class="location" data-ar="عمران - اليمن" data-en="Amran, Yemen">عمران - اليمن</span>
                     </div>
                 </div>
 
+                <!-- 10. Medical Internship -->
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
-                    <div class="timeline-date">May 2003 - April 2004</div>
                     <div class="timeline-content">
-                        <span class="role-tag">Internship</span>
-                        <h3>Medical Internship</h3>
-                        <span class="hospital-name">Yemeni M.O.H Hospitals</span>
-                        <span class="location">One year in all medical and surgical departments</span>
+                        <span class="timeline-date" data-ar="مايو 2003 - أبريل 2004" data-en="May 2003 - April 2004">مايو 2003 - أبريل 2004</span>
+                        <span class="role-tag" data-ar="امتياز طبي" data-en="Medical Internship">امتياز طبي</span>
+                        <h3 data-ar="طبيب امتياز (لمدة عام كامل في الأقسام الباطنية والجراحية)" data-en="Medical Internship (One Year in All Medical & Surgical Departments)">طبيب امتياز (لمدة عام كامل في الأقسام الباطنية والجراحية)</h3>
+                        <span class="hospital-name" data-ar="مستشفيات وزارة الصحة" data-en="Yemeni M.O.H Hospitals">مستشفيات وزارة الصحة</span>
+                        <span class="location" data-ar="اليمن" data-en="Yemen">اليمن</span>
                     </div>
                 </div>
 
@@ -158,80 +190,46 @@
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <a href="#" class="logo">Dr. Sadek <span>Almaswari</span></a>
-                <p>Excellence in Otorhinolaryngology based in Saudi Arabia.</p>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bar-flex">
+                <div class="footer-brand-box">
+                    <div class="brand-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a7 7 0 0 0-7 7c0 2.5 1.2 4.6 3 6v3a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2v-3l1.5-1.5L19 8a7 7 0 0 0-7-6z"/></svg>
+                    </div>
+                    <div class="brand-text">
+                        <span class="brand-name" data-ar="د. صادق المسوري" data-en="Dr. Sadek Almaswari">د. صادق المسوري</span>
+                        <span class="brand-subtitle-ar" data-ar="استشاري جراحة الأنف والأذن والحنجرة" data-en="ENT Consultant">استشاري جراحة الأنف والأذن والحنجرة</span>
+                    </div>
+                </div>
+                <div class="footer-slogan-box">
+                    <div class="footer-slogan-ar" data-ar="صحة أفضل .. لحياة أجمل" data-en="Better Health .. A Brighter Life">صحة أفضل .. لحياة أجمل</div>
+                    <div class="footer-slogan-en">Better Health .. A Brighter Life</div>
+                </div>
+                <div class="footer-contact-items">
+                    <div class="footer-contact-item">
+                        <span data-ar="الرياض - مستشفى د. محمد الفقيه" data-en="Riyadh - Dr. Mohammed Alfagih Hospital">الرياض - مستشفى د. محمد الفقيه</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <a href="mailto:drsadekm@gmail.com">drsadekm@gmail.com</a>
+                    </div>
+                </div>
             </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="practice.html">Practice Areas</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="news.html">News & Updates</a></li>
-                </ul>
-            </div>
-            <div class="footer-copy">
-                <p>&copy; 2026 Dr. Sadek Almaswari. <br>Crafted by <a href="https://asaasweb.com">asaasweb.com</a></p>
+            <div class="footer-bottom-copy">
+                <span data-ar="© 2026 د. صادق محسن المسوري. جميع الحقوق محفوظة." data-en="© 2026 Dr. Sadek Mohsen Almaswari. All rights reserved.">© 2026 د. صادق محسن المسوري. جميع الحقوق محفوظة.</span>
+                <span>Developed by <a href="https://asaasweb.com" target="_blank" rel="noopener">asaasweb.com</a></span>
             </div>
         </div>
     </footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const observerOptions = { 
-                threshold: 0.2,
-                rootMargin: "0px 0px -50px 0px"
-            };
-            
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = "1";
-                        entry.target.style.transform = "translateY(0)";
-                        observer.unobserve(entry.target); // Only animate once
-                    }
-                });
-            }, observerOptions);
+    <div class="mobile-sticky-bar">
+        <div class="mobile-sticky-grid">
+            <a href="tel:+966590999486" class="mob-bar-btn call"><span data-ar="اتصال" data-en="Call">اتصال</span></a>
+            <a href="contact.html" class="mob-bar-btn book"><span data-ar="احجز موعد" data-en="Book Now">احجز موعد</span></a>
+            <a href="https://wa.me/966590999486" target="_blank" rel="noopener" class="mob-bar-btn whatsapp"><span data-ar="واتساب" data-en="WhatsApp">واتساب</span></a>
+        </div>
+    </div>
 
-            document.querySelectorAll('.timeline-item').forEach(item => {
-                // Set initial state for animation
-                item.style.opacity = "0";
-                item.style.transform = "translateY(40px)";
-                item.style.transition = "opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)";
-                observer.observe(item);
-            });
-        });
-    </script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // 1. Mobile Menu Logic
-            const mobileMenu = document.getElementById('mobile-menu');
-            const navLinks = document.getElementById('nav-links');
-            
-            if (mobileMenu && navLinks) {
-                mobileMenu.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('active');
-                    navLinks.classList.toggle('active');
-                });
-            }
-
-            // 2. Scroll Animation Logic
-            const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.fade-up-element').forEach(el => observer.observe(el));
-        });
-    </script>
-
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

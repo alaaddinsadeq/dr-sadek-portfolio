@@ -1,135 +1,374 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Sadek Mohsen Almaswari | ENT Consultant</title>
+    <title>د. صادق محسن المسوري | استشاري جراحة الأنف والأذن والحنجرة وجراحات الرأس والعنق</title>
+    <meta name="description" content="الموقع الرسمي للدكتور صادق محسن المسوري - استشاري جراحة الأنف والأذن والحنجرة وجراحات الرأس والعنق في الرياض، مستشفى د. محمد الفقيه. البورد السعودي والعربي والأردني.">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
+    <!-- ==================== 1. NAVBAR ==================== -->
     <nav class="navbar">
         <div class="container">
-            <a href="index.html" class="logo">Dr. Sadek <span>Almaswari</span></a>
+            <a href="index.html" class="brand-logo">
+                <div class="brand-icon" aria-hidden="true">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2a7 7 0 0 0-7 7c0 2.5 1.2 4.6 3 6v3a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2v-3l1.5-1.5L19 8a7 7 0 0 0-7-6z"/>
+                        <path d="M9 10a2 2 0 1 0 0 4"/>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name" data-ar="د. صادق المسوري" data-en="Dr. Sadek Almaswari">د. صادق المسوري</span>
+                    <span class="brand-subtitle-ar" data-ar="استشاري جراحة الأنف والأذن والحنجرة" data-en="Consultant ORL, Head & Neck Surgery">استشاري جراحة الأنف والأذن والحنجرة</span>
+                    <span class="brand-subtitle-en">ENT Consultant</span>
+                </div>
+            </a>
+
             <ul class="nav-links" id="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="experience.html">Experience</a></li>
-                <li><a href="practice.html">Practice</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="awards.html">Awards</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="contact.html" class="btn-primary">Contact</a></li>
+                <li><a href="index.html" class="active" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+                <li><a href="education.html" data-ar="نبذة والمؤهلات" data-en="About & Education">نبذة والمؤهلات</a></li>
+                <li><a href="practice.html" data-ar="الخدمات" data-en="Services">الخدمات</a></li>
+                <li><a href="experience.html" data-ar="الخبرات العملية" data-en="Experience">الخبرات العملية</a></li>
+                <li><a href="publications.html" data-ar="الأبحاث والمؤتمرات" data-en="Conferences">الأبحاث والمؤتمرات</a></li>
+                <li><a href="awards.html" data-ar="الشهادات والدورات" data-en="Certifications">الشهادات والدورات</a></li>
+                <li><a href="news.html" data-ar="المقالات" data-en="Articles">المقالات</a></li>
+                <li><a href="contact.html" data-ar="اتصل بنا" data-en="Contact Us">اتصل بنا</a></li>
             </ul>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+
+            <div class="nav-actions">
+                <button type="button" class="lang-switch-btn" onclick="toggleSiteLanguage()" aria-label="Switch Language">
+                    <span>English</span>
+                </button>
+                <a href="contact.html" class="btn-nav-book">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    <span data-ar="احجز موعدك الآن" data-en="Book Appointment">احجز موعدك الآن</span>
+                </a>
+                <div class="menu-toggle" id="mobile-menu" aria-label="Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
         </div>
     </nav>
 
-    <header class="hero-section">
-        <div class="container hero-grid">
-            <div class="hero-content fade-up-element">
-                <span class="hero-subtitle">Welcome to the practice of</span>
-                <h1>Dr. Sadek Mohsen Almaswari</h1>
-                <p class="hero-title">Consultant Otorhinolaryngology, Head & Neck Surgery</p>
-                <p class="hero-desc">Providing world-class, comprehensive ENT care. Elite board certifications from the Saudi Commission, Arab Board, and Jordanian Medical Council.</p>
-                <div class="hero-actions">
-                    <a href="https://wa.me/966114560000" class="btn-primary">Book a Consultation</a>
-                    <a href="practice.html" class="btn-secondary">Explore Practice Areas</a>
-                </div>
-            </div>
+    <!-- ==================== 2. HERO BANNER (WITH UPLOADED HEADER JPG) ==================== -->
+    <header class="hero-banner">
+        <div class="hero-bg-monitor" aria-hidden="true"></div>
+        <div class="hero-banner-container">
             
-            <div class="hero-image-wrapper fade-up-element" style="transition-delay: 0.2s;">
-                <div class="hero-image-placeholder">
-                    <img src="assets/images/profile.png" alt="Dr. Sadek Mohsen Almaswari" class="profile-img">
+            <!-- Hero Text Column -->
+            <div class="hero-main-content">
+                <span class="hero-top-tagline" data-ar="رعاية متخصصة .. لحياة أفضل" data-en="Specialized Care .. For a Better Life">رعاية متخصصة .. لحياة أفضل</span>
+                <h1 class="hero-main-title" data-ar="استشاري جراحة الأنف والأذن والحنجرة" data-en="Consultant Otorhinolaryngology (ENT)">استشاري جراحة الأنف والأذن والحنجرة</h1>
+                <h2 class="hero-sub-title" data-ar="وجراحات الرأس والعنق" data-en="& Head and Neck Surgery">وجراحات الرأس والعنق</h2>
+                <p class="hero-description" data-ar="خبرة متقدمة في التشخيص والعلاج والجراحات الدقيقة باستخدام أحدث التقنيات العالمية في مستشفى د. محمد الفقيه بالرياض." data-en="Advanced expertise in accurate diagnosis, comprehensive treatment, and microsurgeries using the latest medical technologies at Dr. Mohammed Alfagih Hospital, Riyadh.">
+                    خبرة متقدمة في التشخيص والعلاج والجراحات الدقيقة باستخدام أحدث التقنيات العالمية في مستشفى د. محمد الفقيه بالرياض.
+                </p>
+
+                <div class="hero-cta-group">
+                    <a href="contact.html" class="btn-hero-book">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        <span data-ar="احجز موعدك الآن" data-en="Book Your Appointment">احجز موعدك الآن</span>
+                    </a>
+                    <a href="https://wa.me/966590999486" target="_blank" rel="noopener" class="btn-hero-whatsapp">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                        <span data-ar="تواصل عبر واتساب" data-en="Chat via WhatsApp">تواصل عبر واتساب</span>
+                    </a>
+                </div>
+
+                <div class="hero-mini-features">
+                    <div class="hero-mini-item">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        <span data-ar="رعاية متكاملة<br>للكبار والأطفال" data-en="Comprehensive Care<br>Adults & Children">رعاية متكاملة<br>للكبار والأطفال</span>
+                    </div>
+                    <div class="hero-mini-item">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                        <span data-ar="أحدث التقنيات<br>الطبية والجراحية" data-en="Latest Medical<br>& Surgical Tech">أحدث التقنيات<br>الطبية والجراحية</span>
+                    </div>
+                    <div class="hero-mini-item">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 16l2 2 4-4"/></svg>
+                        <span data-ar="مواعيد سريعة<br>وسهولة الحجز" data-en="Fast Appointments<br>& Easy Booking">مواعيد سريعة<br>وسهولة الحجز</span>
+                    </div>
+                </div>
+
+                <div class="hero-priority-script">
+                    <span data-ar="صحتك ..<br>هي أولويتنا" data-en="Your Health..<br>Our Priority">صحتك ..<br>هي أولويتنا</span>
+                    <svg width="90" height="14" viewBox="0 0 90 14" fill="none"><path d="M2 12C28 2 62 2 88 10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
                 </div>
             </div>
+
+            <!-- Hero Doctor Portrait JPG Column -->
+            <div class="hero-doctor-column">
+                <div class="hero-portrait-frame">
+                    <img src="assets/images/dr-sadek-header.jpg" alt="د. صادق محسن المسوري - استشاري جراحة الأنف والأذن والحنجرة" class="hero-portrait-img" fetchpriority="high">
+                    <div class="hero-floating-quote">
+                        <h4 data-ar="د. صادق المسوري" data-en="Dr. Sadek Almaswari">د. صادق المسوري</h4>
+                        <p class="quote-role" data-ar="استشاري جراحة الأنف والأذن والحنجرة وجراحات الرأس والعنق" data-en="Consultant ORL, Head & Neck Surgery">استشاري جراحة الأنف والأذن والحنجرة وجراحات الرأس والعنق</p>
+                        <blockquote data-ar="”هدفنا أن تعود لحياة أفضل .. بتنفس أفضل“" data-en="“Our goal is for you to return to a better life .. with better breathing”">”هدفنا أن تعود لحياة أفضل .. بتنفس أفضل“</blockquote>
+                        <svg class="hero-signature-svg" width="85" height="22" viewBox="0 0 100 26" fill="none">
+                            <path d="M5 20C22 6 35 22 50 12C62 4 72 18 95 8" stroke="#bae6fd" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </header>
 
-    <section class="highlights-section">
-        <div class="container highlights-grid">
-            <div class="highlight-card fade-up-element">
-                <h3>Expert Care</h3>
-                <p>Specialized in advanced Head & Neck Surgeries and comprehensive ENT treatments.</p>
+    <!-- ==================== 3. STATS & CREDENTIALS BAR ==================== -->
+    <section class="stats-ribbon" aria-label="إحصائيات الطبيب">
+        <div class="container stats-ribbon-grid">
+            <div class="stats-motto-box">
+                <div class="stats-motto-ar" data-ar="” تشخيص دقيق .. علاج فعال .. لحياة أفضل “" data-en="“ Accurate Diagnosis .. Effective Treatment .. Better Life ”">” تشخيص دقيق .. علاج فعال .. لحياة أفضل “</div>
+                <div class="stats-motto-en">BETTER HEARING • CLEARER BREATHING • HEALTHIER LIVING</div>
             </div>
-            <div class="highlight-card fade-up-element" style="transition-delay: 0.1s;">
-                <h3>Triple Board Certified</h3>
-                <p>Recognized by Saudi, Arab, and Jordanian medical boards for surgical excellence.</p>
+
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                </div>
+                <div class="stat-text">
+                    <strong data-ar="استشاري معتمد" data-en="Board Certified">استشاري معتمد</strong>
+                    <span data-ar="البورد السعودي والعربي والأردني" data-en="Saudi, Arab & Jordanian Boards">البورد السعودي والعربي والأردني</span>
+                </div>
             </div>
-            <div class="highlight-card fade-up-element" style="transition-delay: 0.2s;">
-                <h3>Riyadh Based</h3>
-                <p>Currently serving patients at the prestigious Dr. Mohammed Alfagih Hospital.</p>
+
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+                </div>
+                <div class="stat-text">
+                    <strong>+20</strong>
+                    <span data-ar="سنة من الخبرة" data-en="Years of Experience">سنة من الخبرة</span>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                </div>
+                <div class="stat-text">
+                    <strong>+3,000</strong>
+                    <span data-ar="عملية ناجحة" data-en="Successful Surgeries">عملية ناجحة</span>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <div class="stat-text">
+                    <strong>+10,000</strong>
+                    <span data-ar="مريض" data-en="Happy Patients">مريض</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="home-summaries">
+    <!-- ==================== 4. MEDICAL SERVICES SECTION (خدماتنا الطبية) ==================== -->
+    <section class="services-section" id="services">
         <div class="container">
+            <div class="section-header-center">
+                <h2 class="section-title-lined" data-ar="خدماتنا الطبية" data-en="Our Medical Services">خدماتنا الطبية</h2>
+                <p class="section-subtitle" data-ar="تشخيص وعلاج شامل لأمراض الأنف والأذن والحنجرة باستخدام أحدث التقنيات" data-en="Comprehensive diagnosis and treatment of Ear, Nose, and Throat conditions using state-of-the-art technologies">
+                    تشخيص وعلاج شامل لأمراض الأنف والأذن والحنجرة باستخدام أحدث التقنيات
+                </p>
+            </div>
+
+            <div class="services-cards-grid">
+                <!-- Card 1: الأنف -->
+                <a href="practice.html" class="service-visual-card">
+                    <div class="service-card-body">
+                        <h3 data-ar="الأنف" data-en="Nose & Sinus">الأنف</h3>
+                        <ul class="service-bullet-list">
+                            <li data-ar="حساسية الأنف" data-en="Allergic Rhinitis">حساسية الأنف</li>
+                            <li data-ar="انسداد الأنف" data-en="Nasal Obstruction">انسداد الأنف</li>
+                            <li data-ar="الجيوب الأنفية" data-en="Chronic Sinusitis">الجيوب الأنفية</li>
+                            <li data-ar="اعوجاج الحاجز الأنفي" data-en="Deviated Septum">اعوجاج الحاجز الأنفي</li>
+                        </ul>
+                    </div>
+                    <div class="service-card-thumb">
+                        <img src="assets/images/service-nose.jpg" alt="علاج أمراض الأنف والجيوب الأنفية" loading="lazy">
+                        <span class="service-arrow-btn">←</span>
+                    </div>
+                </a>
+
+                <!-- Card 2: الأذن -->
+                <a href="practice.html" class="service-visual-card">
+                    <div class="service-card-body">
+                        <h3 data-ar="الأذن" data-en="Ear & Hearing">الأذن</h3>
+                        <ul class="service-bullet-list">
+                            <li data-ar="ضعف السمع" data-en="Hearing Loss">ضعف السمع</li>
+                            <li data-ar="التهابات الأذن" data-en="Ear Infections">التهابات الأذن</li>
+                            <li data-ar="الدوار والاتزان" data-en="Vertigo & Balance">الدوار والاتزان</li>
+                            <li data-ar="ثقب طبلة الأذن" data-en="Eardrum Perforation">ثقب طبلة الأذن</li>
+                        </ul>
+                    </div>
+                    <div class="service-card-thumb">
+                        <img src="assets/images/service-ear.jpg" alt="علاج أمراض الأذن والسمع" loading="lazy">
+                        <span class="service-arrow-btn">←</span>
+                    </div>
+                </a>
+
+                <!-- Card 3: الحنجرة والصوت -->
+                <a href="practice.html" class="service-visual-card">
+                    <div class="service-card-body">
+                        <h3 data-ar="الحنجرة والصوت" data-en="Throat & Voice">الحنجرة والصوت</h3>
+                        <ul class="service-bullet-list">
+                            <li data-ar="بحة الصوت" data-en="Voice Hoarseness">بحة الصوت</li>
+                            <li data-ar="اضطرابات البلع" data-en="Swallowing Disorders">اضطرابات البلع</li>
+                            <li data-ar="ارتجاع الحنجرة" data-en="Laryngeal Reflux">ارتجاع الحنجرة</li>
+                            <li data-ar="أورام الحنجرة" data-en="Laryngeal Tumors">أورام الحنجرة</li>
+                        </ul>
+                    </div>
+                    <div class="service-card-thumb">
+                        <img src="assets/images/service-throat.jpg" alt="علاج أمراض الحنجرة والصوت" loading="lazy">
+                        <span class="service-arrow-btn">←</span>
+                    </div>
+                </a>
+
+                <!-- Card 4: جراحات متقدمة -->
+                <a href="practice.html" class="service-visual-card">
+                    <div class="service-card-body">
+                        <h3 data-ar="جراحات متقدمة" data-en="Advanced Surgeries">جراحات متقدمة</h3>
+                        <ul class="service-bullet-list">
+                            <li data-ar="جراحة الجيوب الأنفية بالمنظار" data-en="Endoscopic Sinus Surgery">جراحة الجيوب الأنفية بالمنظار</li>
+                            <li data-ar="زراعة القوقعة" data-en="Cochlear Implantation">زراعة القوقعة</li>
+                            <li data-ar="جراحات الشخير وتوقف التنفس" data-en="Snoring & Sleep Apnea">جراحات الشخير وتوقف التنفس</li>
+                            <li data-ar="أورام الرأس والعنق وBiZact" data-en="Head & Neck / BiZact">أورام الرأس والعنق وBiZact</li>
+                        </ul>
+                    </div>
+                    <div class="service-card-thumb">
+                        <img src="assets/images/service-surgery.jpg" alt="جراحات الأنف والأذن والحنجرة المتقدمة" loading="lazy">
+                        <span class="service-arrow-btn">←</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Sleep Apnea Highlight Banner + View All Services Button -->
+            <div class="services-bottom-bar">
+                <div class="sleep-apnea-banner">
+                    <div class="sleep-banner-text">
+                        <h4 data-ar="استعد لنوم أفضل وتنفس أسهل" data-en="Get Ready for Better Sleep & Easier Breathing">استعد لنوم أفضل وتنفس أسهل</h4>
+                        <p data-ar="علاج فعال لحالات الشخير وتوقف التنفس أثناء النوم بأحدث التقنيات." data-en="Effective treatment for snoring and obstructive sleep apnea using modern techniques.">علاج فعال لحالات الشخير وتوقف التنفس أثناء النوم بأحدث التقنيات.</p>
+                        <a href="practice.html" class="btn-pill-sm" data-ar="اعرف المزيد ←" data-en="Learn More →">اعرف المزيد ←</a>
+                    </div>
+                    <div class="sleep-banner-img">
+                        <img src="assets/images/sleep-apnea.jpg" alt="علاج الشخير وتوقف التنفس أثناء النوم" loading="lazy">
+                    </div>
+                </div>
+
+                <a href="practice.html" class="btn-outline-services">
+                    <span data-ar="عرض جميع الخدمات الطبية" data-en="View All Medical Services">عرض جميع الخدمات الطبية</span>
+                    <span>←</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 5. SPLIT SECTION: ABOUT DOCTOR & SUCCESS CASES ==================== -->
+    <section class="about-cases-section" id="about">
+        <div class="container about-cases-grid">
             
-            <div class="summary-block fade-up-element">
-                <div class="summary-header">
-                    <h2><a href="practice.html" class="hover-link">Practice Areas <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></h2>
-                    <p>Highlighting specialized ENT procedures and comprehensive patient care.</p>
+            <!-- Right Column: نبذة عن الطبيب -->
+            <div class="about-doctor-card">
+                <div class="about-photo-box">
+                    <img src="assets/images/dr-sadek-header.jpg" alt="د. صادق محسن المسوري" loading="lazy">
                 </div>
-                <div class="summary-grid grid-3">
-                    <div class="preview-card">
-                        <h3>Rhinoplasty</h3>
-                        <p>Functional and aesthetic nasal surgery tailored to the patient.</p>
-                    </div>
-                    <div class="preview-card">
-                        <h3>Endoscopic Sinus Surgery</h3>
-                        <p>Advanced, minimally invasive techniques for chronic sinus issues.</p>
-                    </div>
-                    <div class="preview-card">
-                        <h3>Pediatric ENT</h3>
-                        <p>Compassionate, specialized care for children's ear, nose, and throat conditions.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="summary-block fade-up-element bg-soft tint-box">
-                <div class="summary-header">
-                    <h2><a href="experience.html" class="hover-link">Experience & Education <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></h2>
-                    <p>Decades of clinical excellence and top-tier academic achievement.</p>
-                </div>
-                <div class="summary-grid grid-2">
-                    <div class="preview-card white-card">
-                        <span class="badge">Current Role</span>
-                        <h3>Senior Consultant, ENT</h3>
-                        <p>Leading the Otorhinolaryngology department with a focus on advanced surgical interventions.</p>
-                        <a href="experience.html" class="text-link">View Full Experience &rarr;</a>
-                    </div>
-                    <div class="preview-card white-card">
-                        <span class="badge">Education Highlight</span>
-                        <h3>Board Certification in Otorhinolaryngology</h3>
-                        <p>Extensive fellowship training and rigorous medical education.</p>
-                        <a href="education.html" class="text-link">View Full Education &rarr;</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="summary-block fade-up-element">
-                <div class="summary-header">
-                    <h2><a href="publications.html" class="hover-link">Publications & Awards <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></h2>
-                    <p>Contributions to medical literature and peer recognition.</p>
-                </div>
-                <div class="list-preview">
-                    <div class="list-item">
-                        <div class="list-icon">📝</div>
+                <div class="about-info-Side">
+                    <div class="about-top-grid">
                         <div>
-                            <strong>Recent Publication:</strong> "Advancements in Endoscopic Techniques"
-                            <p class="text-muted">Published in the Journal of Rhinology, 2025</p>
+                            <span class="about-label" data-ar="نبذة عن الطبيب" data-en="About the Doctor">نبذة عن الطبيب</span>
+                            <h2 class="about-doctor-name" data-ar="د. صادق المسوري" data-en="Dr. Sadek Almaswari">د. صادق المسوري</h2>
+                            <p class="about-doctor-role" data-ar="استشاري جراحة الأنف والأذن والحنجرة وجراحات الرأس والعنق" data-en="Consultant Otorhinolaryngology, Head & Neck Surgery">استشاري جراحة الأنف والأذن والحنجرة وجراحات الرأس والعنق</p>
+                            <p class="about-doctor-bio" data-ar="أؤمن بأن العلم والخبرة والإنسانية هي أساس العمل الطبي الناجح، وأسعى دائماً لتقديم أفضل رعاية طبية لمرضاي باستخدام أحدث التقنيات العالمية." data-en="I believe that science, clinical experience, and humanity are the foundation of successful medical practice, striving always to deliver world-class ENT care.">
+                                أؤمن بأن العلم والخبرة والإنسانية هي أساس العمل الطبي الناجح، وأسعى دائماً لتقديم أفضل رعاية طبية لمرضاي باستخدام أحدث التقنيات العالمية.
+                            </p>
+                            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                                <a href="#cv-details" class="btn-full-cv" data-ar="شاهد السيرة المهنية الكاملة ←" data-en="View Full CV →">شاهد السيرة المهنية الكاملة ←</a>
+                                <a href="assets/documents/Dr-Sadek-Almaswari-CV.pdf" download class="btn-outline-services" style="padding: 8px 16px; font-size: 0.82rem;" data-ar="تحميل CV (PDF)" data-en="Download CV (PDF)">تحميل CV (PDF)</a>
+                            </div>
+                        </div>
+
+                        <div class="about-credentials-list">
+                            <div class="credential-row">
+                                <span class="cred-icon">✓</span>
+                                <span data-ar="البورد السعودي والعربي والأردني في الأنف والأذن والحنجرة" data-en="Saudi, Arab & Jordanian Board Certified in ENT">البورد السعودي والعربي والأردني في الأنف والأذن والحنجرة</span>
+                            </div>
+                            <div class="credential-row">
+                                <span class="cred-icon">★</span>
+                                <span data-ar="تدريب متقدم في جراحات الرأس والعنق ومناظير الجيوب" data-en="Advanced Fellowship in Head, Neck & Sinus Endoscopy">تدريب متقدم في جراحات الرأس والعنق ومناظير الجيوب</span>
+                            </div>
+                            <div class="credential-row">
+                                <span class="cred-icon">🌐</span>
+                                <span data-ar="عضو الجمعيات الطبية العالمية والسعودية والأردنية" data-en="Member of International, Saudi & Jordanian ORL Societies">عضو الجمعيات الطبية العالمية والسعودية والأردنية</span>
+                            </div>
+                            <div class="credential-row">
+                                <span class="cred-icon">🎓</span>
+                                <span data-ar="مشاركات واسعة في مؤتمرات ودورات جراحية دولية" data-en="Extensive International Conferences & Masterclasses">مشاركات واسعة في مؤتمرات ودورات جراحية دولية</span>
+                            </div>
+                            <div class="credential-row">
+                                <span class="cred-icon">🏥</span>
+                                <span data-ar="خبرة استشارية وأكاديمية في كبرى الجامعات والمستشفيات" data-en="Consultant & Assistant Professor Experience in Top Hospitals">خبرة استشارية وأكاديمية في كبرى الجامعات والمستشفيات</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="list-item">
-                        <div class="list-icon">🏆</div>
-                        <div>
-                            <strong>Recent Award:</strong> Excellence in Patient Care
-                            <p class="text-muted">Awarded by the Saudi Board of Medicine, 2024</p>
+                </div>
+            </div>
+
+            <!-- Left Column: حالات وقصص نجاح -->
+            <div class="cases-card" id="cases">
+                <div>
+                    <div class="cases-card-header">
+                        <h3 data-ar="حالات وقصص نجاح" data-en="Success Stories & Cases">حالات وقصص نجاح</h3>
+                        <a href="practice.html" class="more-link" data-ar="عرض المزيد ←" data-en="View More →">عرض المزيد ←</a>
+                    </div>
+
+                    <div class="case-tabs">
+                        <button type="button" class="case-tab-btn active" data-filter="all" data-ar="جميع الحالات" data-en="All Cases">جميع الحالات</button>
+                        <button type="button" class="case-tab-btn" data-filter="sinus" data-ar="حالة الجيوب الأنفية" data-en="Sinus Case">حالة الجيوب الأنفية</button>
+                        <button type="button" class="case-tab-btn" data-filter="ear" data-ar="حالة الأذن والقوقعة" data-en="Ear & Cochlear">حالة الأذن والقوقعة</button>
+                    </div>
+
+                    <div class="cases-showcase-grid">
+                        <!-- Case 1: Sinus Endoscopy -->
+                        <div class="case-box" data-case-cat="sinus">
+                            <h4 data-ar="حالة انسداد الأنف والجيوب الأنفية" data-en="Nasal Obstruction & Sinusitis Case">حالة انسداد الأنف والجيوب الأنفية</h4>
+                            <div class="before-after-pair">
+                                <div class="ba-img-wrap">
+                                    <img src="assets/images/case-sinus-before.jpg" alt="قبل عملية منظار الجيوب الأنفية" loading="lazy">
+                                    <span class="ba-tag before" data-ar="قبل العلاج" data-en="Before">قبل العلاج</span>
+                                </div>
+                                <div class="ba-img-wrap">
+                                    <img src="assets/images/case-sinus-after.jpg" alt="بعد عملية منظار الجيوب الأنفية" loading="lazy">
+                                    <span class="ba-tag after" data-ar="بعد العلاج" data-en="After">بعد العلاج</span>
+                                </div>
+                            </div>
+                            <p data-ar="تحسن واضح في التنفس وجودة الحياة بعد عملية منظار الجيوب الأنفية الوظيفي (FESS)." data-en="Significant improvement in breathing and quality of life after endoscopic sinus surgery (FESS).">
+                                تحسن واضح في التنفس وجودة الحياة بعد عملية منظار الجيوب الأنفية الوظيفي (FESS).
+                            </p>
+                        </div>
+
+                        <!-- Case 2: Cochlear / Ear -->
+                        <div class="case-box" data-case-cat="ear">
+                            <h4 data-ar="حالة زراعة القوقعة وترقيع الطبلة" data-en="Cochlear Implant & Tympanoplasty">حالة زراعة القوقعة وترقيع الطبلة</h4>
+                            <div class="before-after-pair">
+                                <div class="ba-img-wrap">
+                                    <img src="assets/images/case-ear-before.jpg" alt="قبل العلاج" loading="lazy">
+                                    <span class="ba-tag before" data-ar="قبل" data-en="Before">قبل</span>
+                                </div>
+                                <div class="ba-img-wrap">
+                                    <img src="assets/images/case-ear-after.jpg" alt="بعد العلاج" loading="lazy">
+                                    <span class="ba-tag after" data-ar="بعد" data-en="After">بعد</span>
+                                </div>
+                            </div>
+                            <p data-ar="استعادة القدرة على السمع وتحسن التواصل الفعال مع المحيط." data-en="Restoration of hearing ability and improved communication.">
+                                استعادة القدرة على السمع وتحسن التواصل الفعال مع المحيط.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -138,53 +377,388 @@
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <a href="#" class="logo">Dr. Sadek <span>Almaswari</span></a>
-                <p>Excellence in Otorhinolaryngology based in Saudi Arabia.</p>
+    <!-- ==================== 6. COMPLETE CV INFORMATION SECTION (REFERENCED FROM PDF) ==================== -->
+    <section class="cv-reference-section" id="cv-details">
+        <div class="container">
+            <div class="section-header-center">
+                <h2 class="section-title-lined" data-ar="السيرة الذاتية والمهنية الكاملة" data-en="Complete Curriculum Vitae (CV)">السيرة الذاتية والمهنية الكاملة</h2>
+                <p class="section-subtitle" data-ar="سجل حافل بالبوردات الطبية، والخبرات الاستشارية في كبرى المستشفيات، والدورات الجراحية العالمية" data-en="Verified record of medical board certifications, consultant hospital appointments, and international surgical courses">
+                    سجل حافل بالبوردات الطبية، والخبرات الاستشارية في كبرى المستشفيات، والدورات الجراحية العالمية
+                </p>
             </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="practice.html">Practice Areas</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="contact.html">Appointments</a></li>
-                </ul>
+
+            <div class="cv-tabs-bar">
+                <button type="button" class="cv-tab-trigger active" data-tab="cv-tab-edu" data-ar="🎓 المؤهلات والبوردات" data-en="🎓 Education & Boards">🎓 المؤهلات والبوردات</button>
+                <button type="button" class="cv-tab-trigger" data-tab="cv-tab-exp" data-ar="🏥 الخبرات المهنية" data-en="🏥 Clinical Experience">🏥 الخبرات المهنية</button>
+                <button type="button" class="cv-tab-trigger" data-tab="cv-tab-courses" data-ar="🔬 الدورات والمؤتمرات" data-en="🔬 Courses & Conferences">🔬 الدورات والمؤتمرات</button>
+                <button type="button" class="cv-tab-trigger" data-tab="cv-tab-skills" data-ar="📊 المهارات والبيانات" data-en="📊 Skills & Profile">📊 المهارات والبيانات</button>
             </div>
-            <div class="footer-copy">
-                <p>&copy; 2026 Dr. Sadek Mohsen Almaswari. <br>Developed by <a href="https://asaasweb.com" target="_blank">asaasweb.com</a></p>
+
+            <!-- TAB 1: EDUCATION (From PDF Page 1) -->
+            <div class="cv-tab-panel active" id="cv-tab-edu">
+                <div class="cv-cards-grid">
+                    <div class="cv-detail-card">
+                        <span class="cv-period" data-ar="يناير 2022 (1/2022)" data-en="January 2022 (1/2022)">يناير 2022 (1/2022)</span>
+                        <h4 data-ar="شهادة التصنيف المهني - استشاري أنف وأذن وحنجرة" data-en="ENT Consultant Professional Accreditation Certificate">شهادة التصنيف المهني - استشاري أنف وأذن وحنجرة</h4>
+                        <span class="cv-org" data-ar="الهيئة السعودية للتخصصات الصحية (SCFHS)" data-en="Saudi Commission for Health Specialties (SCFHS)">الهيئة السعودية للتخصصات الصحية (SCFHS)</span>
+                        <p data-ar="اعتماد وتصنيف مهني بدرجة استشاري جراحة الأنف والأذن والحنجرة في المملكة العربية السعودية." data-en="Highest professional accreditation as an Otorhinolaryngology (ENT) Consultant in Saudi Arabia.">اعتماد وتصنيف مهني بدرجة استشاري جراحة الأنف والأذن والحنجرة في المملكة العربية السعودية.</p>
+                    </div>
+
+                    <div class="cv-detail-card">
+                        <span class="cv-period" data-ar="فبراير 2017 (2/2017)" data-en="February 2017 (2/2017)">فبراير 2017 (2/2017)</span>
+                        <h4 data-ar="شهادة البورد العربي في الأنف والأذن والحنجرة وجراحة الرأس والعنق" data-en="Arab Board in Otorhinolaryngology & Head and Neck Surgery">شهادة البورد العربي في الأنف والأذن والحنجرة وجراحة الرأس والعنق</h4>
+                        <span class="cv-org" data-ar="المجلس العربي للاختصاصات الصحية" data-en="Arab Board of Health Specializations">المجلس العربي للاختصاصات الصحية</span>
+                        <p data-ar="شهادة الزمالة والبورد العربي في تخصص جراحة الأنف والأذن والحنجرة وجراحات الرأس والعنق." data-en="Certificate of Arab Board in Otorhinolaryngology & Head and Neck Surgery.">شهادة الزمالة والبورد العربي في تخصص جراحة الأنف والأذن والحنجرة وجراحات الرأس والعنق.</p>
+                    </div>
+
+                    <div class="cv-detail-card">
+                        <span class="cv-period" data-ar="أغسطس 2015 (8/2015)" data-en="August 2015 (8/2015)">أغسطس 2015 (8/2015)</span>
+                        <h4 data-ar="شهادة البورد الأردني في الأنف والأذن والحنجرة وجراحة الرأس والعنق" data-en="Jordanian Board in Otorhinolaryngology & Head and Neck Surgery">شهادة البورد الأردني في الأنف والأذن والحنجرة وجراحة الرأس والعنق</h4>
+                        <span class="cv-org" data-ar="المجلس الطبي الأردني - الأردن" data-en="Jordanian Medical Council - Jordan">المجلس الطبي الأردني - الأردن</span>
+                        <p data-ar="شهادة البورد الأردني المعتمدة في جراحة الأنف والأذن والحنجرة وجراحة الرأس والعنق." data-en="Certificate of Jordanian Board in Otorhinolaryngology & Head and Neck Surgery.">شهادة البورد الأردني المعتمدة في جراحة الأنف والأذن والحنجرة وجراحة الرأس والعنق.</p>
+                    </div>
+
+                    <div class="cv-detail-card">
+                        <span class="cv-period" data-ar="يناير 2015 (1/2015)" data-en="January 2015 (1/2015)">يناير 2015 (1/2015)</span>
+                        <h4 data-ar="شهادة إتمام برنامج الإقامة في الأنف والأذن والحنجرة (5 سنوات)" data-en="Certificate of E.N.T Residency (5-Year Program)">شهادة إتمام برنامج الإقامة في الأنف والأذن والحنجرة (5 سنوات)</h4>
+                        <span class="cv-org" data-ar="المجلس الطبي الأردني - مستشفيات وزارة الصحة الأردنية" data-en="Jordanian Medical Council - Jordanian M.O.H Hospitals">المجلس الطبي الأردني - مستشفيات وزارة الصحة الأردنية</span>
+                        <p data-ar="برنامج تدريبي سريري وجراحي متكامل لمدة خمس سنوات في مستشفيات وزارة الصحة الأردنية." data-en="Completed 5-year residency program at Jordanian Ministry of Health hospitals.">برنامج تدريبي سريري وجراحي متكامل لمدة خمس سنوات في مستشفيات وزارة الصحة الأردنية.</p>
+                    </div>
+
+                    <div class="cv-detail-card">
+                        <span class="cv-period" data-ar="مايو 2004 (5/2004)" data-en="May 2004 (5/2004)">مايو 2004 (5/2004)</span>
+                        <h4 data-ar="شهادة الامتياز الطبي" data-en="Certificate of Medical Internship">شهادة الامتياز الطبي</h4>
+                        <span class="cv-org" data-ar="كلية الطب والعلوم الصحية - جامعة صنعاء" data-en="Medicine & Health Sciences College, Sana'a University">كلية الطب والعلوم الصحية - جامعة صنعاء</span>
+                        <p data-ar="إتمام سنة الامتياز الطبي في كافة الأقسام الباطنية والجراحية." data-en="Completed one-year medical internship across all medical and surgical departments.">إتمام سنة الامتياز الطبي في كافة الأقسام الباطنية والجراحية.</p>
+                    </div>
+
+                    <div class="cv-detail-card">
+                        <span class="cv-period" data-ar="يونيو 2003 (6/2003)" data-en="June 2003 (6/2003)">يونيو 2003 (6/2003)</span>
+                        <h4 data-ar="بكالوريوس الطب والجراحة العامة (MBBS)" data-en="MBBS Degree in Medicine & Surgery">بكالوريوس الطب والجراحة العامة (MBBS)</h4>
+                        <span class="cv-org" data-ar="كلية الطب والعلوم الصحية - جامعة صنعاء" data-en="Medicine & Health Sciences College, Sana'a University">كلية الطب والعلوم الصحية - جامعة صنعاء</span>
+                        <p data-ar="درجة البكالوريوس في الطب والجراحة العامة." data-en="Bachelor of Medicine, Bachelor of Surgery (MBBS) degree.">درجة البكالوريوس في الطب والجراحة العامة.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: EXPERIENCE (From PDF Page 1 & 2) -->
+            <div class="cv-tab-panel" id="cv-tab-exp">
+                <div class="cv-cards-grid">
+                    <div class="cv-detail-card">
+                        <span class="cv-period" data-ar="أبريل 2024 - حتى الآن" data-en="April 2024 - Present">أبريل 2024 - حتى الآن</span>
+                        <h4 data-ar="استشاري جراحة الأنف والأذن والحنجرة" data-en="Otorhinolaryngology (ENT) Consultant">استشاري جراحة الأنف والأذن والحنجرة</h4>
+                        <span class="cv-org" data-ar="مستشفى الدكتور محمد الفقيه - الرياض، السعودية" data-en="Dr. Mohammed Alfagih Hospital - Riyadh, KSA">مستشفى الدكتور محمد الفقيه - الرياض، السعودية</span>
+                        <p data-ar="تشخيص وعلاج وجراحات الأنف والأذن والحنجرة والرأس والعنق ومناظير الجيوب الأنفية." data-en="Leading consultant providing advanced ENT, sinus endoscopy, and head & neck surgical care.">تشخيص وعلاج وجراحات الأنف والأذن والحنجرة والرأس والعنق ومناظير الجيوب الأنفية.</p>
+                    </div>
+
+                    <div class="cv-detail-card">
+                        <span class="cv-period" data-ar="3 أبريل 2022 - أبريل 2024" data-en="3 April 2022 - April 2024">3 أبريل 2022 - أبريل 2024</span>
+                        <h4 data-ar="استشاري جراحة الأنف والأذن والحنجرة" data-en="Otorhinolaryngology (ENT) Consultant">استشاري جراحة الأنف والأذن والحنجرة</h4>
+                        <span class="cv-org" data-ar="المستشفى السعودي الألماني - حائل، السعودية" data-en="Saudi German Hospital - Hail, KSA">المستشفى السعودي الألماني - حائل، السعودية</span>
+                        <p data-ar="استشاري جراحة الأنف والأذن والحنجرة بالمستشفى السعودي الألماني." data-en="Consultant ENT Surgeon at Saudi German Hospital, Hail.">استشاري جراحة الأنف والأذن والحنجرة بالمستشفى السعودي الألماني.</p>
+                    </div>
+
+                    <div class="cv-detail-card">
+                        <span class="cv-period" data-ar="يوليو 2021 - 31 مارس 2022" data-en="July 2021 - 31 March 2022">يوليو 2021 - 31 مارس 2022</span>
+                        <h4 data-ar="استشاري جراحة الأنف والأذن والحنجرة" data-en="Otorhinolaryngology (ENT) Consultant">استشاري جراحة الأنف والأذن والحنجرة</h4>
+                        <span class="cv-org" data-ar="مستشفى الزهراء - جدة، السعودية" data-en="Alzahra'a Hospital - Jeddah, KSA">مستشفى الزهراء - جدة، السعودية</span>
+                        <p data-ar="تقديم الرعاية الاستشارية والعمليات الجراحية المتخصصة في جدة." data-en="Consultant Otorhinolaryngology services and surgical procedures in Jeddah.">تقديم الرعاية الاستشارية والعمليات الجراحية المتخصصة في جدة.</p>
+                    </div>
+
+                    <div class="cv-detail-card">
+                        <span class="cv-period" data-ar="أكتوبر 2016 - يوليو 2021" data-en="October 2016 - July 2021">أكتوبر 2016 - يوليو 2021</span>
+                        <h4 data-ar="استشاري مشارك جراحة الأنف والأذن والحنجرة" data-en="Otorhinolaryngology (ENT) Associate Consultant">استشاري مشارك جراحة الأنف والأذن والحنجرة</h4>
+                        <span class="cv-org" data-ar="مجمع الملك عبدالله الطبي - جدة (وزارة الصحة السعودية)" data-en="King Abdullah Medical Complex - Jeddah (MOH, KSA)">مجمع الملك عبدالله الطبي - جدة (وزارة الصحة السعودية)</span>
+                        <p data-ar="العمل كاستشاري مشارك لمدة 5 سنوات في أحد أكبر المجمعات الطبية التخصصية بوزارة الصحة." data-en="Associate Consultant at King Abdullah Medical Complex (MOH) in Jeddah.">العمل كاستشاري مشارك لمدة 5 سنوات في أحد أكبر المجمعات الطبية التخصصية بوزارة الصحة.</p>
+                    </div>
+
+                    <div class="cv-detail-card">
+                        <span class="cv-period" data-ar="أغسطس 2015 - أغسطس 2016" data-en="August 2015 - August 2016">أغسطس 2015 - أغسطس 2016</span>
+                        <h4 data-ar="أخصائي جراحة الأنف والأذن والحنجرة وأستاذ مساعد" data-en="ENT Specialist & Assistant Professor of Medicine">أخصائي جراحة الأنف والأذن والحنجرة وأستاذ مساعد</h4>
+                        <span class="cv-org" data-ar="مركز الضاحية الطبي (عمّان) وجامعة العلوم والتكنولوجيا (فرع الأردن)" data-en="Aldahyah Medical Center & Sciences and Technology University (Amman)">مركز الضاحية الطبي (عمّان) وجامعة العلوم والتكنولوجيا (فرع الأردن)</span>
+                        <p data-ar="الجمع بين الممارسة السريرية كأخصائي والتدريس الأكاديمي كأستاذ مساعد بكلية الطب." data-en="Combined clinical ENT specialist practice with academic teaching as Assistant Professor of Medicine.">الجمع بين الممارسة السريرية كأخصائي والتدريس الأكاديمي كأستاذ مساعد بكلية الطب.</p>
+                    </div>
+
+                    <div class="cv-detail-card">
+                        <span class="cv-period" data-ar="2003 - 2015" data-en="2003 - 2015">2003 - 2015</span>
+                        <h4 data-ar="طبيب مقيم (الأردن) ورئيس قسم أكاديمي وطبيب عام (اليمن)" data-en="ENT Resident (Jordan), Dept Head & General Practitioner">طبيب مقيم (الأردن) ورئيس قسم أكاديمي وطبيب عام (اليمن)</h4>
+                        <span class="cv-org" data-ar="مستشفيات وزارة الصحة الأردنية واليمنية ومعهد الجزيرة للعلوم الطبية" data-en="Jordanian & Yemeni MOH Hospitals & Al-Jazeera Medical Institute">مستشفيات وزارة الصحة الأردنية واليمنية ومعهد الجزيرة للعلوم الطبية</span>
+                        <p data-ar="طبيب مقيم أنف وأذن وحنجرة بالأردن (2010-2015)، ورئيس قسم مساعدي الأطباء ومحاضر بمعهد الجزيرة بصنعاء (2005-2006)." data-en="5-year ENT residency in Jordan (2010-2015), Head of Physician-Assistance Dept & Lecturer (2005-2006), GP & Intern (2003-2010).">طبيب مقيم أنف وأذن وحنجرة بالأردن (2010-2015)، ورئيس قسم مساعدي الأطباء ومحاضر بمعهد الجزيرة بصنعاء (2005-2006).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3: COURSES & CONFERENCES (From PDF Pages 2, 3, 4) -->
+            <div class="cv-tab-panel" id="cv-tab-courses">
+                <div class="cv-cards-grid">
+                    <div class="cv-detail-card">
+                        <span class="cv-period" data-ar="سبتمبر وأكتوبر 2023" data-en="Sept & Oct 2023">سبتمبر وأكتوبر 2023</span>
+                        <h4 data-ar="دورات جراحة مناظير الجيوب الأنفية المتقدمة والوظيفية (FESS)" data-en="Advanced & Functional Endoscopic Sinus Surgery (FESS)">دورات جراحة مناظير الجيوب الأنفية المتقدمة والوظيفية (FESS)</h4>
+                        <span class="cv-org" data-ar="مستشفى جامعة عين شمس التخصصي - القاهرة، مصر" data-en="Ain-Shams University Specialized Hospital - Cairo, Egypt">مستشفى جامعة عين شمس التخصصي - القاهرة، مصر</span>
+                        <p data-ar="دورتان عمليتان مكثفتان للتشريح الجراحي بالمنظار (Cadaveric Dissection) لجراحات الجيوب الأنفية المتقدمة." data-en="Hands-on cadaveric dissection courses in Functional and Advanced Endoscopic Sinus Surgery.">دورتان عمليتان مكثفتان للتشريح الجراحي بالمنظار (Cadaveric Dissection) لجراحات الجيوب الأنفية المتقدمة.</p>
+                    </div>
+
+                    <div class="cv-detail-card">
+                        <span class="cv-period" data-ar="سبتمبر 2023" data-en="September 2023">سبتمبر 2023</span>
+                        <h4 data-ar="ماستركلاس تقنية BiZact الحديثة لاستئصال اللوزتين" data-en="BiZact Special Tool for Tonsillectomies Masterclass">ماستركلاس تقنية BiZact الحديثة لاستئصال اللوزتين</h4>
+                        <span class="cv-org" data-ar="أكاديمية مدترونيك للتدريب - إسطنبول، تركيا" data-en="Medtronic Training Academy - Istanbul, Turkey">أكاديمية مدترونيك للتدريب - إسطنبول، تركيا</span>
+                        <p data-ar="تدريب متقدم على استخدام جهاز BiZact الحديث لجراحات اللوزتين بأقل ألم ونزيف." data-en="Advanced surgical masterclass on the Medtronic BiZact tonsillectomy device in Istanbul.">تدريب متقدم على استخدام جهاز BiZact الحديث لجراحات اللوزتين بأقل ألم ونزيف.</p>
+                    </div>
+
+                    <div class="cv-detail-card">
+                        <span class="cv-period" data-ar="سبتمبر 2023 وأغسطس 2022" data-en="Sept 2023 & Aug 2022">سبتمبر 2023 وأغسطس 2022</span>
+                        <h4 data-ar="دورة الدعم المتقدم لحياة المصابين (ATLS) ودورة التركين الواعي" data-en="ATLS Course for Doctors & Conscious Sedation Course">دورة الدعم المتقدم لحياة المصابين (ATLS) ودورة التركين الواعي</h4>
+                        <span class="cv-org" data-ar="الكلية الأمريكية للجراحين والمستشفى السعودي الألماني - السعودية" data-en="American College of Surgeons & Saudi German Hospital - KSA">الكلية الأمريكية للجراحين والمستشفى السعودي الألماني - السعودية</span>
+                        <p data-ar="اعتماد ATLS لطوارئ الإصابات والحوادث، وشهادة التركين الواعي للإجراءات الجراحية." data-en="Certified by the Trauma Committee / American College of Surgeons in KSA.">اعتماد ATLS لطوارئ الإصابات والحوادث، وشهادة التركين الواعي للإجراءات الجراحية.</p>
+                    </div>
+
+                    <div class="cv-detail-card">
+                        <span class="cv-period" data-ar="فبراير ونوفمبر 2014" data-en="Feb & Nov 2014">فبراير ونوفمبر 2014</span>
+                        <h4 data-ar="جراحات زراعة القوقعة السمعية (مساعد جراح أول)" data-en="Cochlear Implantation Surgeries (First Assistant Surgeon)">جراحات زراعة القوقعة السمعية (مساعد جراح أول)</h4>
+                        <span class="cv-org" data-ar="حملة مكافحة الصمم في العالمين العربي والإسلامي - عمّان، الأردن" data-en="Deafness Control Campaign in Arabic & Islamic Worlds - Amman">حملة مكافحة الصمم في العالمين العربي والإسلامي - عمّان، الأردن</span>
+                        <p data-ar="مشاركة جراحية فاعلة كمساعد جراح أول في عمليات زراعة القوقعة السمعية." data-en="Participated as first assistant surgeon in cochlear implantation surgical campaigns.">مشاركة جراحية فاعلة كمساعد جراح أول في عمليات زراعة القوقعة السمعية.</p>
+                    </div>
+
+                    <div class="cv-detail-card">
+                        <span class="cv-period" data-ar="2019 - 2021" data-en="2019 - 2021">2019 - 2021</span>
+                        <h4 data-ar="المؤتمرات الدولية للأنف والأذن والحنجرة (السعودية، مصر، سنغافورة، ماليزيا)" data-en="International ORL Conferences (KSA, Egypt, Singapore, Malaysia)">المؤتمرات الدولية للأنف والأذن والحنجرة (السعودية، مصر، سنغافورة، ماليزيا)</h4>
+                        <span class="cv-org" data-ar="الجمعية السعودية للأنف والأذن والحنجرة، جامعة كولومبيا، راينو مصر" data-en="Saudi ORL Society, Columbia University, Rhino Egypt, IPO Malaysia">الجمعية السعودية للأنف والأذن والحنجرة، جامعة كولومبيا، راينو مصر</span>
+                        <p data-ar="المؤتمر السعودي 25 و26 (أبها والطائف)، مؤتمر طب الأذن على النيل (القاهرة)، مؤتمر سنغافورة 11 للنوم والجيوب الأنفية، ودورة جامعة كولومبيا للمناظير." data-en="26th & 25th Saudi ORL Conferences, Otology on the Nile, 11th Singapore Sleep & Rhinology, 3rd Columbia Endoscopic Course, and MRC Course Malaysia.">المؤتمر السعودي 25 و26 (أبها والطائف)، مؤتمر طب الأذن على النيل (القاهرة)، مؤتمر سنغافورة 11 للنوم والجيوب الأنفية، ودورة جامعة كولومبيا للمناظير.</p>
+                    </div>
+
+                    <div class="cv-detail-card">
+                        <span class="cv-period" data-ar="أبريل 2017 - مايو 2020" data-en="April 2017 - May 2020">أبريل 2017 - مايو 2020</span>
+                        <h4 data-ar="البحث العلمي والممارسة السريرية الجيدة ولغة الإشارة" data-en="Scientific Research, Good Clinical Practice & Sign Language">البحث العلمي والممارسة السريرية الجيدة ولغة الإشارة</h4>
+                        <span class="cv-org" data-ar="كلية طب هارفارد، مركز NIDA، الشؤون الأكاديمية بصحة جدة" data-en="Harvard Medical School, NIDA Center, Jeddah MOH">كلية طب هارفارد، مركز NIDA، الشؤون الأكاديمية بصحة جدة</span>
+                        <p data-ar="دورات كتابة الأوراق العلمية ومناهج البحث، وحماية المشاركين في الأبحاث (PHRP)، ودورة لغة الإشارة للتواصل مع الصم." data-en="Scientific paper writing, PHRP, NIDA Good Clinical Practice, Harvard COVID-19 lessons, and Sign Language Workshop.">دورات كتابة الأوراق العلمية ومناهج البحث، وحماية المشاركين في الأبحاث (PHRP)، ودورة لغة الإشارة للتواصل مع الصم.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 4: SKILLS & PERSONAL DETAILS (From PDF Pages 1, 2, 4) -->
+            <div class="cv-tab-panel" id="cv-tab-skills">
+                <div class="skills-bars-grid">
+                    <div class="skill-bar-card">
+                        <div class="skill-bar-top">
+                            <span data-ar="اللغة العربية (اللغة الأم)" data-en="Arabic Language (Native)">اللغة العربية (اللغة الأم)</span>
+                            <span>100%</span>
+                        </div>
+                        <div class="skill-progress-track"><div class="skill-progress-fill" style="width: 100%;"></div></div>
+                    </div>
+
+                    <div class="skill-bar-card">
+                        <div class="skill-bar-top">
+                            <span data-ar="اللغة الإنجليزية (قراءة، كتابة، محادثة)" data-en="English Language (Reading, Writing & Speaking)">اللغة الإنجليزية (قراءة، كتابة، محادثة)</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-progress-track"><div class="skill-progress-fill" style="width: 80%;"></div></div>
+                    </div>
+
+                    <div class="skill-bar-card">
+                        <div class="skill-bar-top">
+                            <span data-ar="الأبحاث العلمية (تخطيط، تنفيذ، وتحرير)" data-en="Scientific Researches (Planning, Performance & Edition)">الأبحاث العلمية (تخطيط، تنفيذ، وتحرير)</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-progress-track"><div class="skill-progress-fill" style="width: 80%;"></div></div>
+                    </div>
+
+                    <div class="skill-bar-card">
+                        <div class="skill-bar-top">
+                            <span data-ar="إعداد وتنظيم الدورات التعليمية والعملية" data-en="Educational & Practical Courses Arrangement">إعداد وتنظيم الدورات التعليمية والعملية</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-progress-track"><div class="skill-progress-fill" style="width: 80%;"></div></div>
+                    </div>
+
+                    <div class="skill-bar-card">
+                        <div class="skill-bar-top">
+                            <span data-ar="الحاسب الآلي والتقنيات الطبية الرقمية" data-en="Computer & Medical Information Systems">الحاسب الآلي والتقنيات الطبية الرقمية</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-progress-track"><div class="skill-progress-fill" style="width: 80%;"></div></div>
+                    </div>
+
+                    <div class="skill-bar-card">
+                        <div class="skill-bar-top">
+                            <span data-ar="التخطيط والتنظيم الإداري الطبي" data-en="Administrative Planning & Organization">التخطيط والتنظيم الإداري الطبي</span>
+                            <span>60%</span>
+                        </div>
+                        <div class="skill-progress-track"><div class="skill-progress-fill" style="width: 60%;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 7. BOTTOM SPLIT: PATIENT REVIEWS & CONSULTATION CTA ==================== -->
+    <section class="reviews-cta-section" id="reviews">
+        <div class="container reviews-cta-grid">
+            
+            <!-- Right Column: آراء المرضى -->
+            <div class="reviews-panel">
+                <div class="cases-card-header">
+                    <h3 data-ar="آراء المرضى" data-en="Patient Testimonials">آراء المرضى</h3>
+                    <a href="contact.html" class="more-link" data-ar="شاركنا تجربتك ←" data-en="Share Your Experience →">شاركنا تجربتك ←</a>
+                </div>
+
+                <div class="reviews-cards-row">
+                    <div class="review-item-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-quote" data-ar="”دقة تشخيص ممتازة ونتيجة العملية فاقت توقعاتي. شكراً دكتور صادق.“" data-en="“Excellent diagnostic accuracy and the surgery outcome exceeded my expectations.”">
+                            ”دقة تشخيص ممتازة ونتيجة العملية فاقت توقعاتي. شكراً دكتور صادق.“
+                        </p>
+                        <span class="review-author" data-ar="أحمد - الرياض" data-en="Ahmed - Riyadh">أحمد - الرياض</span>
+                    </div>
+
+                    <div class="review-item-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-quote" data-ar="”أفضل تجربة طبية مررت بها. متابعة مستمرة واهتمام كبير بالمريض.“" data-en="“The best medical experience I have had. Continuous follow-up and great care.”">
+                            ”أفضل تجربة طبية مررت بها. متابعة مستمرة واهتمام كبير بالمريض.“
+                        </p>
+                        <span class="review-author" data-ar="سارة - جدة" data-en="Sara - Jeddah">سارة - جدة</span>
+                    </div>
+
+                    <div class="review-item-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-quote" data-ar="”شرح واضح واحترافية عالية في علاج الجيوب الأنفية. أنصح به بشدة.“" data-en="“Clear explanation and high professionalism in treating chronic sinusitis. Highly recommended.”">
+                            ”شرح واضح واحترافية عالية في علاج الجيوب الأنفية. أنصح به بشدة.“
+                        </p>
+                        <span class="review-author" data-ar="خالد - الرياض" data-en="Khaled - Riyadh">خالد - الرياض</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Left Column: احجز استشارتك الآن -->
+            <div class="consultation-cta-card">
+                <span class="cta-card-subtitle" data-ar="لا تؤجل صحتك" data-en="Don't Delay Your Health">لا تؤجل صحتك</span>
+                <h3 class="cta-card-title" data-ar="احجز استشارتك الآن" data-en="Book Your Consultation Now">احجز استشارتك الآن</h3>
+                <p class="cta-card-desc" data-ar="كلما كان التشخيص مبكراً .. كانت فرص العلاج أفضل. ابدأ رحلتك العلاجية اليوم." data-en="Early diagnosis leads to the best treatment outcomes. Start your recovery journey today.">
+                    كلما كان التشخيص مبكراً .. كانت فرص العلاج أفضل. ابدأ رحلتك العلاجية اليوم.
+                </p>
+
+                <div class="cta-three-buttons">
+                    <a href="contact.html" class="cta-white-btn book-text">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        <span data-ar="حجز موعد" data-en="Book Now">حجز موعد</span>
+                    </a>
+                    <a href="https://wa.me/966590999486" target="_blank" rel="noopener" class="cta-white-btn whatsapp-text">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                        <span data-ar="واتساب" data-en="WhatsApp">واتساب</span>
+                    </a>
+                    <a href="tel:+966590999486" class="cta-white-btn call-text">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <span data-ar="اتصال هاتفي" data-en="Phone Call">اتصال هاتفي</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================== 8. CLINIC LOCATION STRIP (موقع العيادة) ==================== -->
+    <section class="clinic-location-strip">
+        <div class="container">
+            <div class="location-card-wide">
+                <div class="location-details">
+                    <h3 data-ar="موقع العيادة" data-en="Clinic Location">موقع العيادة</h3>
+                    <div class="loc-city" data-ar="الرياض - المملكة العربية السعودية | مستشفى د. محمد الفقيه" data-en="Riyadh - Kingdom of Saudi Arabia | Dr. Mohammed Alfagih Hospital">الرياض - المملكة العربية السعودية | مستشفى د. محمد الفقيه</div>
+                    <p data-ar="موقع مميز وسهل الوصول في مدينة الرياض، مجهز بأحدث عيادات وغرف عمليات الأنف والأذن والحنجرة." data-en="Prime, easily accessible location in Riyadh equipped with state-of-the-art ENT clinics and operating suites.">
+                        موقع مميز وسهل الوصول في مدينة الرياض، مجهز بأحدث عيادات وغرف عمليات الأنف والأذن والحنجرة.
+                    </p>
+                    <a href="https://maps.google.com/?q=Dr.+Mohammed+Alfagih+Hospital+Riyadh" target="_blank" rel="noopener" class="btn-outline-services" style="padding: 9px 22px; font-size: 0.88rem;">
+                        <span data-ar="عرض الموقع على الخريطة ←" data-en="View Location on Google Maps →">عرض الموقع على الخريطة ←</span>
+                    </a>
+                </div>
+                <div class="location-map-frame">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=Dr.%20Mohammed%20Alfagih%20Hospital,%20Riyadh&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        title="موقع عيادة د. صادق المسوري في مستشفى د. محمد الفقيه بالرياض"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 9. FOOTER ==================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bar-flex">
+                <div class="footer-brand-box">
+                    <div class="brand-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a7 7 0 0 0-7 7c0 2.5 1.2 4.6 3 6v3a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2v-3l1.5-1.5L19 8a7 7 0 0 0-7-6z"/></svg>
+                    </div>
+                    <div class="brand-text">
+                        <span class="brand-name" data-ar="د. صادق المسوري" data-en="Dr. Sadek Almaswari">د. صادق المسوري</span>
+                        <span class="brand-subtitle-ar" data-ar="استشاري جراحة الأنف والأذن والحنجرة" data-en="ENT Consultant">استشاري جراحة الأنف والأذن والحنجرة</span>
+                    </div>
+                </div>
+
+                <div class="footer-slogan-box">
+                    <div class="footer-slogan-ar" data-ar="صحة أفضل .. لحياة أجمل" data-en="Better Health .. A Brighter Life">صحة أفضل .. لحياة أجمل</div>
+                    <div class="footer-slogan-en">Better Health .. A Brighter Life</div>
+                </div>
+
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/Dr.Sadek.Almaswari/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Facebook">f</a>
+                    <a href="https://x.com/drsadekm" target="_blank" rel="noopener" class="footer-social-link" aria-label="X / Twitter">𝕏</a>
+                    <a href="https://www.linkedin.com/in/dr-sadek-almaswari-02b643183" target="_blank" rel="noopener" class="footer-social-link" aria-label="LinkedIn">in</a>
+                    <a href="https://wa.me/966590999486" target="_blank" rel="noopener" class="footer-social-link" aria-label="WhatsApp">✆</a>
+                </div>
+
+                <div class="footer-contact-items">
+                    <div class="footer-contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span data-ar="العيادة: الرياض - المملكة العربية السعودية" data-en="Clinic: Riyadh, Saudi Arabia">العيادة: الرياض - المملكة العربية السعودية</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <a href="mailto:drsadekm@gmail.com">drsadekm@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom-copy">
+                <span data-ar="© 2026 د. صادق محسن المسوري. جميع الحقوق محفوظة." data-en="© 2026 Dr. Sadek Mohsen Almaswari. All rights reserved.">© 2026 د. صادق محسن المسوري. جميع الحقوق محفوظة.</span>
+                <span>Developed by <a href="https://asaasweb.com" target="_blank" rel="noopener">asaasweb.com</a></span>
             </div>
         </div>
     </footer>
 
+    <!-- ==================== 10. MOBILE STICKY BOTTOM ACTION BAR ==================== -->
+    <div class="mobile-sticky-bar">
+        <div class="mobile-sticky-grid">
+            <a href="tel:+966590999486" class="mob-bar-btn call">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span data-ar="اتصال" data-en="Call">اتصال</span>
+            </a>
+            <a href="contact.html" class="mob-bar-btn book">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span data-ar="احجز موعد" data-en="Book Now">احجز موعد</span>
+            </a>
+            <a href="https://wa.me/966590999486" target="_blank" rel="noopener" class="mob-bar-btn whatsapp">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                <span data-ar="واتساب" data-en="WhatsApp">واتساب</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // 1. Mobile Menu Logic
-            const mobileMenu = document.getElementById('mobile-menu');
-            const navLinks = document.getElementById('nav-links');
-            
-            if (mobileMenu && navLinks) {
-                mobileMenu.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('active');
-                    navLinks.classList.toggle('active');
-                });
-            }
-
-            // 2. Scroll Animation Logic
-            const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.fade-up-element').forEach(el => observer.observe(el));
-        });
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
     </script>
-
 </body>
 </html>

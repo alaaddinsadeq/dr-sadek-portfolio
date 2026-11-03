@@ -1,93 +1,59 @@
-console.log("Asaasweb JS is running!");
-document.addEventListener('DOMContentLoaded', () => {
-    // --- 1. Mobile Menu Toggle ---
-    const navLinks = document.querySelector('.nav-links');
-    // You can add a burger icon in HTML and target it here
-    // For now, this ensures the nav is ready for responsive behavior
-
-    // --- 2. Dynamic News Loader ---
-    // This function runs only on the news.html page
-    if (document.getElementById('news-feed')) {
-        loadNews();
-    }
-});
-
 /**
- * Fetches the list of posts from your GitHub repository 
- * via the Netlify/GitHub API and renders them.
+ * Dr. Sadek Mohsen Almaswari - Official Website JS
+ * Main Language: Arabic (RTL) with Bilingual Switcher (AR / EN)
+ * Keeps Netlify Forms, Netlify Identity & Decap CMS GitHub API News Loader
  */
-async function loadNews() {
-    const newsFeed = document.getElementById('news-feed');
-    const repoOwner = "alaaddinsadeq"; // Change this
-    const repoName = "dr-sadek-portfolio";    // Change this
-    const folderPath = "posts";               // Where CMS saves .md files
 
-    try {
-        // Fetch the list of files in the /posts folder
-        const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${folderPath}`);
-        const files = await response.json();
+(function () {
+    // Set default language to Arabic ('ar')
+    const savedLang = localStorage.getItem('dr_sadek_lang') || 'ar';
+    applyLanguage(savedLang);
+})();
 
-        // Clear the static placeholders
-        newsFeed.innerHTML = '';
+function applyLanguage(lang) {
+    const htmlEl = document.documentElement;
+    htmlEl.setAttribute('lang', lang);
+    htmlEl.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+    localStorage.setItem('dr_sadek_lang', lang);
 
-        // Loop through the files (Markdown files)
-        for (const file of files) {
-            if (file.name.endsWith('.md')) {
-                const postData = await fetchPostContent(file.download_url);
-                renderPost(postData, newsFeed);
-            }
+    // Update all text elements with data-ar / data-en
+    document.querySelectorAll('[data-ar][data-en]').forEach(el => {
+        const text = lang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+        if (text !== null) {
+            el.innerHTML = text;
         }
-    } catch (error) {
-        console.error("Error loading news:", error);
-        newsFeed.innerHTML = "<p>Unable to load news at this time.</p>";
-    }
+    });
+
+    // Update form placeholders
+    document.querySelectorAll('[data-placeholder-ar][data-placeholder-en]').forEach(el => {
+        el.placeholder = lang === 'ar'
+            ? el.getAttribute('data-placeholder-ar')
+            : el.getAttribute('data-placeholder-en');
+    });
+
+    // Update language toggle button label
+    document.querySelectorAll('.lang-switch-btn').forEach(btn => {
+        btn.innerHTML = lang === 'ar'
+            ? `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> <span>English</span>`
+            : `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> <span>العربية</span>`;
+    });
 }
 
-/**
- * Helper to fetch and simple-parse Markdown content
- */
-async function fetchPostContent(url) {
-    const res = await fetch(url);
-    const text = await res.text();
+window.toggleSiteLanguage = function () {
+    const current = document.documentElement.getAttribute('lang') || 'ar';
+    const next = current === 'ar' ? 'en' : 'ar';
+    applyLanguage(next);
+};
 
-    // Simple RegEx to pull out YAML frontmatter (Title, Date, Description)
-    // Decap CMS saves data between --- lines
-    const title = text.match(/title:\s*"(.*)"/) || text.match(/title:\s*(.*)/);
-    const date = text.match(/date:\s*(.*)/);
-    const desc = text.match(/description:\s*"(.*)"/) || text.match(/description:\s*(.*)/);
+document.addEventListener('DOMContentLoaded', () => {
+    // Re-apply language once DOM is ready
+    const currentLang = localStorage.getItem('dr_sadek_lang') || 'ar';
+    applyLanguage(currentLang);
 
-    return {
-        title: title ? title[1].replace(/"/g, '') : "Untitled Post",
-        date: date ? date[1].split('T')[0] : "",
-        description: desc ? desc[1].replace(/"/g, '') : "Read more about this update...",
-    };
-}
-
-/**
- * Injects the post HTML into the grid
- */
-function renderPost(post, container) {
-    const article = document.createElement('article');
-    article.className = 'news-card';
-    article.innerHTML = `
-        <div class="news-image-placeholder">
-            <span>Update</span>
-        </div>
-        <div class="news-content">
-            <span class="news-date">${post.date}</span>
-            <h3>${post.title}</h3>
-            <p>${post.description}</p>
-            <a href="#" class="read-more">Read Full Post →</a>
-        </div>
-    `;
-    container.appendChild(article);
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-    // 1. Mobile Menu Logic
+    // 1. Mobile Hamburger Menu
     const mobileMenu = document.getElementById('mobile-menu');
     const navLinks = document.getElementById('nav-links');
-    
+
     if (mobileMenu && navLinks) {
         mobileMenu.addEventListener('click', () => {
             mobileMenu.classList.toggle('active');
@@ -95,16 +61,102 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // 2. Scroll Animation Logic
-    const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
+    // 2. CV Tabs Switching (on Homepage / CV section)
+    const cvTabButtons = document.querySelectorAll('.cv-tab-trigger');
+    const cvTabPanels = document.querySelectorAll('.cv-tab-panel');
 
-    document.querySelectorAll('.fade-up-element').forEach(el => observer.observe(el));
+    cvTabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetId = btn.getAttribute('data-tab');
+            cvTabButtons.forEach(b => b.classList.remove('active'));
+            cvTabPanels.forEach(p => p.classList.remove('active'));
+
+            btn.classList.add('active');
+            const targetPanel = document.getElementById(targetId);
+            if (targetPanel) targetPanel.classList.add('active');
+        });
+    });
+
+    // 3. Success Cases Filter Tabs (on Homepage)
+    const caseTabButtons = document.querySelectorAll('.case-tab-btn');
+    const caseBoxes = document.querySelectorAll('.case-box[data-case-cat]');
+
+    caseTabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const cat = btn.getAttribute('data-filter');
+            caseTabButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            caseBoxes.forEach(box => {
+                if (cat === 'all' || box.getAttribute('data-case-cat') === cat) {
+                    box.style.display = 'block';
+                } else {
+                    box.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // 4. Dynamic News Loader (for news.html or #news-feed)
+    if (document.getElementById('news-feed')) {
+        loadNews('news-feed');
+    }
 });
+
+/**
+ * Fetches posts from the GitHub repository (Decap CMS / Netlify)
+ */
+async function loadNews(containerId) {
+    const newsFeed = document.getElementById(containerId);
+    if (!newsFeed) return;
+
+    const repoOwner = "alaaddinsadeq";
+    const repoName = "dr-sadek-portfolio";
+    const folderPath = "posts";
+
+    try {
+        const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${folderPath}`);
+        if (!response.ok) throw new Error("GitHub API unreachable");
+        const files = await response.json();
+
+        newsFeed.innerHTML = '';
+        const mdFiles = files.filter(f => f.name.endsWith('.md')).reverse();
+
+        for (const file of mdFiles) {
+            const postData = await fetchPostContent(file.download_url);
+            renderPost(postData, newsFeed);
+        }
+    } catch (error) {
+        console.warn("Using fallback news content:", error);
+    }
+}
+
+async function fetchPostContent(url) {
+    const res = await fetch(url);
+    const text = await res.text();
+
+    const title = text.match(/title:\s*"(.*)"/) || text.match(/title:\s*(.*)/);
+    const date = text.match(/date:\s*(.*)/);
+    const desc = text.match(/description:\s*"(.*)"/) || text.match(/description:\s*(.*)/);
+
+    return {
+        title: title ? title[1].replace(/['"]/g, '') : "مقال طبي",
+        date: date ? date[1].split('T')[0].replace(/['"]/g, '') : "2026",
+        description: desc ? desc[1].replace(/['"]/g, '') : "",
+    };
+}
+
+function renderPost(post, container) {
+    const article = document.createElement('article');
+    article.className = 'news-card';
+    article.innerHTML = `
+        <div class="news-image"></div>
+        <div class="news-content">
+            <span class="news-date">${post.date}</span>
+            <h3 class="news-title">${post.title}</h3>
+            <p>${post.description}</p>
+            <a href="news.html" class="read-more" data-ar="اقرأ المقال كاملاً ←" data-en="Read Full Post →">اقرأ المقال كاملاً ←</a>
+        </div>
+    `;
+    container.appendChild(article);
+}
