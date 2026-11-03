@@ -68,9 +68,14 @@
                 <h2 class="section-title-lined" data-ar="البوردات والاعتمادات المهنية" data-en="Medical Board Certifications">البوردات والاعتمادات المهنية</h2>
             </div>
 
-            <div class="board-grid" style="margin-bottom: 64px;">
+            <div class="board-grid" style="margin-bottom: 56px;">
                 <div class="board-card premium-gold">
-                    <div class="board-icon">🏆</div>
+                    <div class="board-icon-svg" aria-hidden="true">
+                        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2l7 4v6c0 5.25-3.4 9.74-7 11-3.6-1.26-7-5.75-7-11V6l7-4z"/>
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                    </div>
                     <div class="board-date" data-ar="يناير 2022" data-en="January 2022">يناير 2022</div>
                     <h3 data-ar="اعتماد استشاري جراحة الأنف والأذن والحنجرة" data-en="ENT Consultant Accreditation">اعتماد استشاري جراحة الأنف والأذن والحنجرة</h3>
                     <p class="board-issuer" data-ar="الهيئة السعودية للتخصصات الصحية (SCFHS)" data-en="Saudi Commission for Health Specialties">الهيئة السعودية للتخصصات الصحية (SCFHS)</p>
@@ -80,7 +85,14 @@
                 </div>
 
                 <div class="board-card">
-                    <div class="board-icon">📜</div>
+                    <div class="board-icon-svg" aria-hidden="true">
+                        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <circle cx="12" cy="14" r="3"/>
+                            <path d="M10.5 16.5L9.5 20l2.5-1.5L14.5 20l-1-3.5"/>
+                        </svg>
+                    </div>
                     <div class="board-date" data-ar="فبراير 2017" data-en="February 2017">فبراير 2017</div>
                     <h3 data-ar="شهادة البورد العربي" data-en="Arab Board Certification">شهادة البورد العربي</h3>
                     <p class="board-issuer" data-ar="المجلس العربي للاختصاصات الصحية" data-en="Arab Board of Health Specializations">المجلس العربي للاختصاصات الصحية</p>
@@ -90,7 +102,14 @@
                 </div>
 
                 <div class="board-card">
-                    <div class="board-icon">🏅</div>
+                    <div class="board-icon-svg" aria-hidden="true">
+                        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="8" r="6"/>
+                            <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+                            <path d="M12 6v4"/>
+                            <path d="M10 8h4"/>
+                        </svg>
+                    </div>
                     <div class="board-date" data-ar="أغسطس 2015" data-en="August 2015">أغسطس 2015</div>
                     <h3 data-ar="شهادة البورد الأردني" data-en="Jordanian Board Certification">شهادة البورد الأردني</h3>
                     <p class="board-issuer" data-ar="المجلس الطبي الأردني" data-en="Jordanian Medical Council">المجلس الطبي الأردني</p>
@@ -100,11 +119,141 @@
                 </div>
             </div>
 
+            <!-- ==================== MODERN CERTIFICATE SLIDER GALLERY ==================== -->
+            <div class="cert-slider-section" id="certificate-gallery">
+                <div class="section-header-center">
+                    <h2 class="section-title-lined" data-ar="معرض الشهادات والاعتمادات الموثقة" data-en="Verified Certificates & CME Gallery">معرض الشهادات والاعتمادات الموثقة</h2>
+                    <p class="section-subtitle" data-ar="تصفح صور الشهادات والدورات الجراحية والمؤتمرات الدولية المعتمدة (اضغط على الشهادة لتكبيرها بملء الشاشة)" data-en="Browse official surgical dissection certificates and international conference accreditations (Click any certificate to zoom fullscreen)">
+                        تصفح صور الشهادات والدورات الجراحية والمؤتمرات الدولية المعتمدة (اضغط على الشهادة لتكبيرها بملء الشاشة)
+                    </p>
+                </div>
+
+                <div class="cert-slider-shell">
+                    <div class="cert-slider-main">
+                        <!-- Certificate Image Stage -->
+                        <div class="cert-stage-frame" id="cert-stage-frame" role="button" tabindex="0" aria-label="تكبير الشهادة">
+                            <span class="cert-counter-pill" id="cert-counter-pill">1 / 6</span>
+                            <img src="certificate/IMG_3381.jpg" alt="شهادة دورة جراحة مجرى الهواء بالمنظار والجراحة المفتوحة" class="cert-stage-img" id="cert-main-img">
+                            <span class="cert-zoom-badge">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                                <span data-ar="اضغط للتكبير" data-en="Click to Zoom">اضغط للتكبير</span>
+                            </span>
+                        </div>
+
+                        <!-- Certificate Details & Controls Panel -->
+                        <div class="cert-info-panel">
+                            <div>
+                                <div class="cert-badge-tag">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                                    <span id="cert-cme-badge">10 ساعات تعليم طبي مستمر (10 CME Hours)</span>
+                                </div>
+                                <h3 class="cert-info-title" id="cert-info-title">الدورة الجراحية الثالثة لمناظير وجراحات مجرى الهواء المفتوحة</h3>
+                                <div class="cert-info-issuer" id="cert-info-issuer">الخدمات الطبية الملكية بقوة دفاع البحرين - مركز ولي العهد للتدريب والبحوث الطبية</div>
+                                <p class="cert-info-meta" id="cert-info-meta">ورشة عمل وتدريب جراحي متقدم على جراحات مجرى الهواء بالمنظار والجراحة المفتوحة - مملكة البحرين (7 - 8 سبتمبر 2024).</p>
+                            </div>
+
+                            <div class="cert-nav-controls">
+                                <button type="button" class="cert-nav-btn" id="cert-prev-btn" aria-label="الشهادة السابقة">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                                </button>
+                                <button type="button" class="cert-nav-btn" id="cert-next-btn" aria-label="الشهادة التالية">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                                </button>
+                                <button type="button" class="cert-fullscreen-btn" id="cert-fullscreen-btn">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+                                    <span data-ar="عرض بملء الشاشة" data-en="Fullscreen View">عرض بملء الشاشة</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Thumbnail Filmstrip -->
+                    <div class="cert-thumbs-strip" id="cert-thumbs-strip">
+                        <div class="cert-thumb-item active" data-index="0">
+                            <img src="certificate/IMG_3381.jpg" alt="The 3rd Endoscopic & Open Airway Surgical Course">
+                            <span class="cert-thumb-caption" data-ar="جراحات مجرى الهواء - البحرين" data-en="Airway Surgical Course">جراحات مجرى الهواء - البحرين</span>
+                        </div>
+                        <div class="cert-thumb-item" data-index="1">
+                            <img src="certificate/IMG_3382.jpg" alt="The 39th SORL International Conference" loading="lazy">
+                            <span class="cert-thumb-caption" data-ar="مؤتمر SORL 39 - جدة" data-en="39th SORL Conference">مؤتمر SORL 39 - جدة</span>
+                        </div>
+                        <div class="cert-thumb-item" data-index="2">
+                            <img src="certificate/IMG_3383.jpg" alt="The 5th Temporal Bone Hands On Dissection Course" loading="lazy">
+                            <span class="cert-thumb-caption" data-ar="تشريح العظم الصدغي - البحرين" data-en="Temporal Bone Dissection">تشريح العظم الصدغي - البحرين</span>
+                        </div>
+                        <div class="cert-thumb-item" data-index="3">
+                            <img src="certificate/IMG_3384.jpg" alt="Bahrain ENT Congress" loading="lazy">
+                            <span class="cert-thumb-caption" data-ar="مؤتمر البحرين للأنف والأذن" data-en="Bahrain ENT Congress">مؤتمر البحرين للأنف والأذن</span>
+                        </div>
+                        <div class="cert-thumb-item" data-index="4">
+                            <img src="certificate/IMG_3385.jpg" alt="The 40th SORL International Conference Jeddah" loading="lazy">
+                            <span class="cert-thumb-caption" data-ar="مؤتمر SORL 40 - جدة" data-en="40th SORL Conference">مؤتمر SORL 40 - جدة</span>
+                        </div>
+                        <div class="cert-thumb-item" data-index="5">
+                            <img src="certificate/IMG_3386.jpg" alt="HINTS+ Peripheral Vestibular Disorders" loading="lazy">
+                            <span class="cert-thumb-caption" data-ar="تشخيص الدوار والاتزان HINTS+" data-en="HINTS+ Vestibular Course">تشخيص الدوار والاتزان HINTS+</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lightbox Modal for Fullscreen Certificate View -->
+            <div class="cert-lightbox" id="cert-lightbox" aria-hidden="true">
+                <button type="button" class="cert-lightbox-close" id="cert-lightbox-close" aria-label="إغلاق">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+                <img src="certificate/IMG_3381.jpg" alt="شهادة مكبرة" id="cert-lightbox-img">
+            </div>
+
             <div class="section-header-center">
                 <h2 class="section-title-lined" data-ar="الدورات الجراحية المتقدمة وورش العمل" data-en="Advanced Surgical Masterclasses & Courses">الدورات الجراحية المتقدمة وورش العمل</h2>
             </div>
 
             <div class="accreditation-grid">
+                
+                <div class="acc-card">
+                    <div class="acc-year" data-ar="يناير 2026" data-en="Jan 2026">يناير 2026</div>
+                    <div class="acc-content">
+                        <h4 data-ar="المؤتمر الدولي الأربعون للجمعية السعودية للأنف والأذن والحنجرة (40th SORL)" data-en="The 40th SORL International Conference Jeddah">المؤتمر الدولي الأربعون للجمعية السعودية للأنف والأذن والحنجرة (40th SORL)</h4>
+                        <span class="acc-location" data-ar="جدة، المملكة العربية السعودية | فندق هيلتون جدة (8 - 10 يناير 2026)" data-en="Jeddah, KSA | Hilton Hotel Jeddah (8–10 Jan 2026)">جدة، المملكة العربية السعودية | فندق هيلتون جدة (8 - 10 يناير 2026)</span>
+                        <p data-ar="المشاركة في المؤتمر الدولي الأربعين للجمعية السعودية للأنف والأذن والحنجرة وجراحة الرأس والعنق." data-en="Participated in the 40th Saudi Otorhinolaryngology Society International Conference in Jeddah.">
+                            المشاركة في المؤتمر الدولي الأربعين للجمعية السعودية للأنف والأذن والحنجرة وجراحة الرأس والعنق.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="acc-card">
+                    <div class="acc-year" data-ar="يناير 2025" data-en="Jan 2025">يناير 2025</div>
+                    <div class="acc-content">
+                        <h4 data-ar="المؤتمر الدولي 39 للجمعية السعودية للأنف والأذن والحنجرة و13 للأكاديمية الآسيوية لتجميل الوجه (24 CME)" data-en="39th SORL & 13th Pan Asian Facial Plastic & Reconstructive Surgery Conference (24 CME)">المؤتمر الدولي 39 للجمعية السعودية للأنف والأذن والحنجرة و13 للأكاديمية الآسيوية لتجميل الوجه (24 CME)</h4>
+                        <span class="acc-location" data-ar="جدة، المملكة العربية السعودية | معتمد بـ 24 ساعة تعليم طبي من الهيئة السعودية للتخصصات الصحية" data-en="Jeddah, KSA | Accredited by SCFHS for 24 CME Hours (30 Jan – 1 Feb 2025)">جدة، المملكة العربية السعودية | معتمد بـ 24 ساعة تعليم طبي من الهيئة السعودية للتخصصات الصحية</span>
+                        <p data-ar="مؤتمر دولي مشترك في مستجدات جراحات الأنف والأذن والحنجرة والجراحات التجميلية والترميمية للوجه." data-en="Joint international conference covering advances in ORL-HNS and facial plastic & reconstructive surgery.">
+                            مؤتمر دولي مشترك في مستجدات جراحات الأنف والأذن والحنجرة والجراحات التجميلية والترميمية للوجه.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="acc-card">
+                    <div class="acc-year" data-ar="سبتمبر 2024" data-en="Sep 2024">سبتمبر 2024</div>
+                    <div class="acc-content">
+                        <h4 data-ar="الدورة الجراحية الثالثة لمناظير وجراحات مجرى الهواء المفتوحة (3rd Endoscopic & Open Airway Course)" data-en="The 3rd Endoscopic & Open Airway Surgical Course (10 CME Hours)">الدورة الجراحية الثالثة لمناظير وجراحات مجرى الهواء المفتوحة (3rd Endoscopic & Open Airway Course)</h4>
+                        <span class="acc-location" data-ar="مملكة البحرين | الخدمات الطبية الملكية - مركز ولي العهد للتدريب والبحوث الطبية" data-en="Kingdom of Bahrain | BDF Royal Medical Services - Crown Prince Center">مملكة البحرين | الخدمات الطبية الملكية - مركز ولي العهد للتدريب والبحوث الطبية</span>
+                        <p data-ar="دورة عملية وجراحية مكثفة في جراحات ومناظير مجرى الهواء التنفسي (7 - 8 سبتمبر 2024، معتمدة بـ 10 ساعات CME)." data-en="Hands-on surgical course in endoscopic and open airway reconstruction (07–08 Sep 2024, 10 CME Hours).">
+                            دورة عملية وجراحية مكثفة في جراحات ومناظير مجرى الهواء التنفسي (7 - 8 سبتمبر 2024، معتمدة بـ 10 ساعات CME).
+                        </p>
+                    </div>
+                </div>
+
+                <div class="acc-card">
+                    <div class="acc-year" data-ar="سبتمبر 2024" data-en="Sep 2024">سبتمبر 2024</div>
+                    <div class="acc-content">
+                        <h4 data-ar="الدورة العملية الخامسة لتشريح العظم الصدغي وجراحات الأذن الدقيقة (13 CME) ومؤتمر البحرين للأنف والأذن" data-en="The 5th Temporal Bone Hands-On Dissection Course (13 CME) & Bahrain ENT Congress">الدورة العملية الخامسة لتشريح العظم الصدغي وجراحات الأذن الدقيقة (13 CME) ومؤتمر البحرين للأنف والأذن</h4>
+                        <span class="acc-location" data-ar="مملكة البحرين | الخدمات الطبية الملكية بقوة دفاع البحرين والهيئة الوطنية لتنظيم المهن الصحية" data-en="Kingdom of Bahrain | BDF Royal Medical Services & NHRA Bahrain (Sep 2024)">مملكة البحرين | الخدمات الطبية الملكية بقوة دفاع البحرين والهيئة الوطنية لتنظيم المهن الصحية</span>
+                        <p data-ar="تدريب تشريحي عملي دقيق على العظم الصدغي وجراحات الأذن المجهرية (13 ساعة CME) وحضور مؤتمر البحرين للأنف والأذن والحنجرة (6 ساعات CME)." data-en="Hands-on temporal bone microscopic dissection course (13 CME Hours) and Bahrain ENT Congress (6 CME Hours).">
+                            تدريب تشريحي عملي دقيق على العظم الصدغي وجراحات الأذن المجهرية (13 ساعة CME) وحضور مؤتمر البحرين للأنف والأذن والحنجرة (6 ساعات CME).
+                        </p>
+                    </div>
+                </div>
                 
                 <div class="acc-card">
                     <div class="acc-year" data-ar="أكتوبر 2023" data-en="Oct 2023">أكتوبر 2023</div>

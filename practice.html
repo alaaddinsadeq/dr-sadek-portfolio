@@ -125,6 +125,77 @@
             </div>
 
         </div>
+
+        <!-- ==================== RELOCATED SUCCESS STORIES & CASES (CLICK TO VIEW ONLY) ==================== -->
+        <div class="container cases-reveal-wrapper" id="cases">
+            <div class="cases-trigger-card">
+                <div class="cases-trigger-info">
+                    <h3 data-ar="حالات وقصص نجاح سريرية" data-en="Clinical Success Stories & Cases">حالات وقصص نجاح سريرية</h3>
+                    <p data-ar="نتائج ملموسة قبل وبعد العلاج الجراحي والمناظير .. اضغط على الزر لاستعراض الحالات السريرية الموثقة." data-en="Tangible before-and-after surgical and endoscopic results .. Click the button to view documented clinical cases.">
+                        نتائج ملموسة قبل وبعد العلاج الجراحي والمناظير .. اضغط على الزر لاستعراض الحالات السريرية الموثقة.
+                    </p>
+                </div>
+                <button type="button" class="btn-toggle-cases" id="toggle-cases-btn" aria-expanded="false" aria-controls="cases-collapsible-panel">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    <span id="toggle-cases-label" data-ar="اضغط هنا لعرض حالات وقصص النجاح" data-en="Click to View Success Stories & Cases">اضغط هنا لعرض حالات وقصص النجاح</span>
+                    <svg class="chevron-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+            </div>
+
+            <!-- Hidden by default; only appears when clicked -->
+            <div class="cases-collapsible-panel" id="cases-collapsible-panel">
+                <div class="cases-card" style="box-shadow: var(--shadow-lg);">
+                    <div class="cases-card-header">
+                        <h3 data-ar="حالات وقصص نجاح (قبل وبعد العلاج)" data-en="Success Stories & Cases (Before & After)">حالات وقصص نجاح (قبل وبعد العلاج)</h3>
+                        <a href="contact.html" class="more-link" data-ar="احجز استشارتك المماثلة ←" data-en="Book a Similar Consultation →">احجز استشارتك المماثلة ←</a>
+                    </div>
+
+                    <div class="case-tabs">
+                        <button type="button" class="case-tab-btn active" data-filter="all" data-ar="جميع الحالات" data-en="All Cases">جميع الحالات</button>
+                        <button type="button" class="case-tab-btn" data-filter="sinus" data-ar="حالة الجيوب الأنفية" data-en="Sinus Case">حالة الجيوب الأنفية</button>
+                        <button type="button" class="case-tab-btn" data-filter="ear" data-ar="حالة الأذن والقوقعة" data-en="Ear & Cochlear">حالة الأذن والقوقعة</button>
+                    </div>
+
+                    <div class="cases-showcase-grid">
+                        <!-- Case 1: Sinus Endoscopy -->
+                        <div class="case-box" data-case-cat="sinus">
+                            <h4 data-ar="حالة انسداد الأنف والجيوب الأنفية" data-en="Nasal Obstruction & Sinusitis Case">حالة انسداد الأنف والجيوب الأنفية</h4>
+                            <div class="before-after-pair">
+                                <div class="ba-img-wrap">
+                                    <img src="assets/images/case-sinus-before.jpg" alt="قبل عملية منظار الجيوب الأنفية" loading="lazy">
+                                    <span class="ba-tag before" data-ar="قبل العلاج" data-en="Before">قبل العلاج</span>
+                                </div>
+                                <div class="ba-img-wrap">
+                                    <img src="assets/images/case-sinus-after.jpg" alt="بعد عملية منظار الجيوب الأنفية" loading="lazy">
+                                    <span class="ba-tag after" data-ar="بعد العلاج" data-en="After">بعد العلاج</span>
+                                </div>
+                            </div>
+                            <p data-ar="تحسن واضح في التنفس وجودة الحياة بعد عملية منظار الجيوب الأنفية الوظيفي (FESS)." data-en="Significant improvement in breathing and quality of life after endoscopic sinus surgery (FESS).">
+                                تحسن واضح في التنفس وجودة الحياة بعد عملية منظار الجيوب الأنفية الوظيفي (FESS).
+                            </p>
+                        </div>
+
+                        <!-- Case 2: Cochlear / Ear -->
+                        <div class="case-box" data-case-cat="ear">
+                            <h4 data-ar="حالة زراعة القوقعة وترقيع الطبلة" data-en="Cochlear Implant & Tympanoplasty">حالة زراعة القوقعة وترقيع الطبلة</h4>
+                            <div class="before-after-pair">
+                                <div class="ba-img-wrap">
+                                    <img src="assets/images/case-ear-before.jpg" alt="قبل العلاج" loading="lazy">
+                                    <span class="ba-tag before" data-ar="قبل" data-en="Before">قبل</span>
+                                </div>
+                                <div class="ba-img-wrap">
+                                    <img src="assets/images/case-ear-after.jpg" alt="بعد العلاج" loading="lazy">
+                                    <span class="ba-tag after" data-ar="بعد" data-en="After">بعد</span>
+                                </div>
+                            </div>
+                            <p data-ar="استعادة القدرة على السمع وتحسن التواصل الفعال مع المحيط." data-en="Restoration of hearing ability and improved communication.">
+                                استعادة القدرة على السمع وتحسن التواصل الفعال مع المحيط.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <footer class="site-footer">
